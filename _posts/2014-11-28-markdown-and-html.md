@@ -4,7 +4,7 @@ title: Markdown and HTML
 tags: [Test, Markdown]
 ---
 
-Jekyll supports the use of [Markdown](http://daringfireball.net/projects/markdown/syntax) with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.
+Jekyll supports the use of [Á´½Ó](http://daringfireball.net/projects/markdown/syntax) with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.
 
 Tables have also been extended from Markdown:
 
