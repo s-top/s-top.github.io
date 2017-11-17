@@ -8,13 +8,18 @@ description: "问:“为什么喜欢爬山？”答:“因为山在那。”，�
 ---
 
 <!-- Travel Grid Section -->
-<section class="portfolio">
+<section class="travel">
     <div class="row">
         {% for item in site.travel %}
         <div class="col-sm-4 col-xs-4 portfolio-item">
-            <div>
-                <h3>{{ item.title }}</h3>
-            </div>
+            <header>
+                <h3>
+                    {{ item.title }}
+                </h3>
+                <p class="meta">
+                    {{ item.date | date: "%B %-d, %Y" }}
+                </p>
+            </header>
             <a href="{{ site.url }}{{ item.url }}" class="portfolio-link" data-keyboard="true">
                 <div class="caption" title="{{ item.title }}">
                     <div class="caption-content">
@@ -23,9 +28,6 @@ description: "问:“为什么喜欢爬山？”答:“因为山在那。”，�
                 </div>
                 <img src="{{ site.baseurl }}/{{ item.img }}" class="" alt="">
             </a>
-        </div>
-        <div>
-            {{ item.date | date: "%B %-d, %Y" }}
         </div>
         {% endfor %}
     </div>
