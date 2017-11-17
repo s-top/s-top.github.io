@@ -55,7 +55,7 @@ header {
 .feature-image {
     padding: 0%;
     .post-link {
-        color: #383838;
+        color: $feature-image-text-color;
     }
     header {
         color: $feature-image-text-color;
