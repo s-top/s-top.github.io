@@ -31,7 +31,7 @@ navs:
     label: 标签
   -
     href: /about/
-    label: 关于我
+    label: 关于
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
