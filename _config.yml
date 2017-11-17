@@ -2,6 +2,34 @@
 baseurl: ""
 url: "https://s-top.github.io"
 
+# ---------------- #
+#    Navigation    #
+# ---------------- #
+navs:
+  -
+    href: /
+    label: 首页
+
+  -
+    href: /blog/
+    label: 博客
+
+  -
+    href: /portfolio/
+    label: 我的代码
+
+  -
+    href: /travel/
+    label: 旅行
+
+  -
+    href: /search/
+    label: 搜索
+
+  -
+    href: /about/
+    label: 关于
+
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
