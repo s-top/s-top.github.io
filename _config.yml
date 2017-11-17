@@ -34,8 +34,8 @@ navs:
 theme_settings:
   # Meta
   title: 欢迎进入 S-top 的博客
-  avatar: assets/img/triangle.svg
-  favicon: assets/favicon.ico
+  avatar: assets/img/logo.svg
+  favicon: assets/lion.ico
   gravatar: # Email MD5 hash
   description: "A website with blog posts and pages" # used by search engines
 
