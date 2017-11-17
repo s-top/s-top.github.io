@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ninja
-img: "assets/img/portfolio/java.jpg"
+img: "assets/img/portfolio/github.png"
 date: April, 08 2014
 tags: [Java,代码]
 ---
