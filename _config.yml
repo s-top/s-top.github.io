@@ -12,7 +12,7 @@ navs:
 
   -
     href: /blog/
-    label: 博客
+    label: 全部博客
 
   -
     href: /portfolio/
@@ -101,14 +101,14 @@ paginate_path: "blog/page:num"
 # PORTFOLIO
 collections:
   portfolio:
-    output: true
-    permalink: /:collection/:name
+      output: true
+      permalink: /:collection/:name
   travel:
       output: true
       permalink: /:collection/:name
   blog:
-        output: true
-        permalink: /:collection/:name
+      output: true
+      permalink: /:collection/:name
 
 # BUILD SETTINGS
 markdown: kramdown

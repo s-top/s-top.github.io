@@ -16,24 +16,24 @@ description: "编程，到底可以蕴涵多少情怀"
             <img src="{{ site.baseurl }}/{{ post.feature-img }}">
         </div>
         {% endif %}
-      <span>
-          <header>
-              <h1>
-                  <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
-                      {{ post.title }}
-                  </a>
-              </h1>
-              <p class="meta">
-                  {{ post.date | date: "%B %-d, %Y" }}
-              </p>
-          </header>
-          <div class="excerpt">
-              {{ post.excerpt }}
-              <a class="button" href="{{ post.url | prepend: site.baseurl }}">
-                  {{ site.theme_settings.str_continue_reading }}
-              </a>
-          </div>
-      </span>
+        <span>
+            <header>
+                <h1>
+                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                        {{ post.title }}
+                    </a>
+                </h1>
+                <p class="meta">
+                    {{ post.date | date: "%B %-d, %Y" }}
+                </p>
+            </header>
+            <div class="excerpt">
+                {{ post.excerpt }}
+                <a class="button" href="{{ post.url | prepend: site.baseurl }}">
+                    {{ site.theme_settings.str_continue_reading }}
+                </a>
+            </div>
+        </span>
     </div>
     {% endfor %}
 </div>
