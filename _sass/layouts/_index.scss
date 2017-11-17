@@ -12,13 +12,11 @@
     background-repeat: no-repeat;
     
     @media (min-width: $break) {
-        height: 250px;
         background-size: $feature-image-size;
     }
     
     //Smaller screen
     @media screen and (max-width: 850px) {
-        height: 150px;
         background-size: auto 150%;
     }
     
