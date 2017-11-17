@@ -8,19 +8,19 @@ permalink: /tags/
 
 <!-- cycles through posts to get tags -->
 {% assign rawtags = "" %}
-{% for post in site.posts %}
-{% assign post_tags = post.tags | join:'|' | append:'|' %}
-{% assign rawtags = rawtags | append:post_tags %}
-{% endfor %}
+<!--{% for post in site.posts %}-->
+<!--{% assign post_tags = post.tags | join:'|' | append:'|' %}-->
+<!--{% assign rawtags = rawtags | append:post_tags %}-->
+<!--{% endfor %}-->
 
 <!-- cycles through portfolio collection to get tags -->
-{% assign portfolio =  site.portfolio | map: 'tags' | join: ','  | split: ',' | uniq %}
-{% for tag in portfolio %}
-{% assign ttags = tag | join:'|' | append:'|' %}
-{% assign rawtags = rawtags | append:ttags %}
-{% endfor %}
+<!--{% assign portfolio =  site.portfolio | map: 'tags' | join: ','  | split: ',' | uniq %}-->
+<!--{% for tag in portfolio %}-->
+<!--{% assign ttags = tag | join:'|' | append:'|' %}-->
+<!--{% assign rawtags = rawtags | append:ttags %}-->
+<!--{% endfor %}-->
 
-<!-- cycles through travel collection to get tags -->
+<!-- cycles through _travel collection to get tags -->
 {% assign travel =  site.travel | map: 'tags' | join: ','  | split: ',' | uniq %}
 {% for travel_tags in travel %}
 {% assign traveltags = travel_tags | join:'|' | append:'|' %}
