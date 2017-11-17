@@ -41,9 +41,9 @@ theme_settings:
 
   # Header and footer text
   header_text: >
-     <p>“认真你就赢了”。</p>
+     <p>“认真，</p>
 
-     <p>见兔而顾犬, 未为晚也； 亡羊而补牢, 未为迟也。(《战国策》)</p>
+     <p>你就赢了。”</p>
   header_text_feature_image: assets/img/pexels/book-glass.jpeg
   footer_text: >
    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
