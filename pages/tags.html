@@ -87,16 +87,16 @@ permalink: /tags/
             {% endfor %}
 
             <!-- travel -->
-            {% for note in site.travel %}
-            {% if note.tags contains tag %}
+            {% for travel in site.travel %}
+            {% if travel.tags contains tag %}
             <h5 class="tag-title">
                 <a href="{{ site.baseurl }}{{ note.url }}">
                     <i class="fa fa-file-o" aria-hidden="true"></i>
-                    {{ note.title }}
+                    {{ travel.title }}
                 </a>
 
                 <div class="meta">
-                    {{ note.date | date: "%B %-d, %Y" }}
+                    {{ travel.date | date: "%B %-d, %Y" }}
                 </div>
             </h5>
             {% endif %}
