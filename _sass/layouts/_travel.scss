@@ -1,11 +1,14 @@
 .travel * {
     z-index: 2;
-    //margin: 8% 5%;
+    margin: 5% 3%;
     img {
         padding: 0 0;
         margin: 0 0;
     }
 
+    p {
+      text-align:center;
+    }
     .portfolio-item {
         right: 0;
         margin: 0 0 15px;
