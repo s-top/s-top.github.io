@@ -1,5 +1,5 @@
 # SITE CONFIGURATION
-baseurl: "https://s-top.github.io"
+baseurl: ""
 url: "https://s-top.github.io"
 
 # THEME-SPECIFIC CONFIGURATION
