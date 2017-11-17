@@ -13,7 +13,7 @@ description: "问:“为什么喜欢爬山？”答:“因为山在那。”，�
         {% for item in site.travel %}
         <div class="col-sm-4 col-xs-4 portfolio-item">
             <h3>{{ item.title }}</h3>
-            <p class="meta">
+            <p>
                 {{ item.date | date: "%B %-d, %Y" }}
             </p>
             <a href="{{ site.url }}{{ item.url }}" class="portfolio-link" data-keyboard="true">
