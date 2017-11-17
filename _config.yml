@@ -43,7 +43,7 @@ theme_settings:
   header_text: >
      <p>“认真，你就赢了。”</p>
 
-     <p>     —————— S-top</p>
+     <p>Faith | What I've always believed</p>
   header_text_feature_image: assets/img/pexels/book-glass.jpeg
   footer_text: >
    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
