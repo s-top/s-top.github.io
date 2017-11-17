@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tags
+title: ±êÇ©
 permalink: /tags/
 ---
 
@@ -22,6 +22,7 @@ permalink: /tags/
 
 <!-- Displays the list of tags-->
 {% assign tags = rawtags | split:'|' | sort | uniq %}
+    <!--tagsÁĞ±í-->
     <div class="tag-list">
         {% for tag in tags %}
         <a class="button" href="#{{ tag | cgi_escape }}">
@@ -35,9 +36,13 @@ permalink: /tags/
     <div class="posts">
         {% for tag in tags %}
         <h3 id="{{ tag | cgi_escape }}" class="tag-anchor">
-            <a href="#{{ tag | cgi_escape }}"><i class="fa fa-tag fa-fw"></i> {{ tag }}</a>
-            <a href="#{{ page.title }}" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
-
+            <a href="#{{ tag | cgi_escape }}">
+                <i class="fa fa-tag fa-fw"></i>
+                {{ tag }}
+            </a>
+            <a href="#{{ page.title }}" style="float: right">
+                <i class="fa fa-chevron-up" aria-hidden="true"> </i>
+            </a>
         </h3>
 
         <!-- Posts and collection for each tags -->

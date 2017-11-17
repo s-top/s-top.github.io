@@ -1,15 +1,15 @@
 --- 
 layout: bootstrap 
-title : 文件夹
-permalink: /portfolio/
-subtitle: "Projects I am working on" 
-feature-img: "assets/img/pexels/computer.jpeg"
+title : 关于旅行
+permalink: /travel/
+subtitle: "-----行万里路-----"
+feature-img: "assets/img/pexels/disco-full.jpeg"
 ---
 
 <!-- Portfolio Grid Section -->
 <section class="portfolio">
     <div class="row">
-        {% for item in site.portfolio %}
+        {% for item in site.travel %}
         <div class="col-sm-4 col-xs-4 portfolio-item">
             <a href="{{ site.url }}{{ item.url }}" class="portfolio-link" data-keyboard="true">
                 <div class="caption" title="{{ item.title }}">

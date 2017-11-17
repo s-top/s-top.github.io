@@ -1,11 +1,11 @@
 # SITE CONFIGURATION
-baseurl: "/"
+baseurl: "https://s-top.github.io"
 url: "https://s-top.github.io"
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: S-top's Blog
+  title: 欢迎进入 S-top 的博客
   avatar: assets/img/triangle.svg
   favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
@@ -29,7 +29,7 @@ theme_settings:
   facebook:
   flickr:
   gitlab:
-  github: "sylhare"
+  github: "s-top"
   google_plus:
   instagram:
   linkedin:  # Full URL
