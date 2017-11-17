@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ¹ØÓÚ×÷Õß
+title: å…³äºä½œè€…
 permalink: /about/
 feature-img: "assets/img/pexels/circuit.jpeg"
 ---
