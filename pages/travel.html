@@ -15,9 +15,6 @@ description: "问:“为什么喜欢爬山？”答:“因为山在那。”，�
             <div>
                 <h3>{{ item.title }}</h3>
             </div>
-            <div>
-                {{ item.date | date: "%B %-d, %Y" }}
-            </div>
             <a href="{{ site.url }}{{ item.url }}" class="portfolio-link" data-keyboard="true">
                 <div class="caption" title="{{ item.title }}">
                     <div class="caption-content">
@@ -26,6 +23,9 @@ description: "问:“为什么喜欢爬山？”答:“因为山在那。”，�
                 </div>
                 <img src="{{ site.baseurl }}/{{ item.img }}" class="" alt="">
             </a>
+        </div>
+        <div>
+            {{ item.date | date: "%B %-d, %Y" }}
         </div>
         {% endfor %}
     </div>
