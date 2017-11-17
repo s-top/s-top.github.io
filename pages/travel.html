@@ -6,13 +6,9 @@ subtitle: "-----关于旅行-----"
 feature-img: "assets/img/pexels/disco-full.jpeg"
 ---
 
-<!-- Portfolio Grid Section -->
-<section>
+{% for item in site.travel %}
     <div>
-        {% for item in site.travel %}
-        <div>
-            {{ item.title }}
-        </div>
-        {% endfor %}
+        {{ item.title }}
     </div>
-</section>
+{% endfor %}
+

@@ -8,17 +8,17 @@ permalink: /tags/
 
 <!-- cycles through posts to get tags -->
 {% assign rawtags = "" %}
-<!--{% for post in site.posts %}-->
-<!--{% assign post_tags = post.tags | join:'|' | append:'|' %}-->
-<!--{% assign rawtags = rawtags | append:post_tags %}-->
-<!--{% endfor %}-->
+{% for post in site.posts %}
+{% assign post_tags = post.tags | join:'|' | append:'|' %}
+{% assign rawtags = rawtags | append:post_tags %}
+{% endfor %}
 
-<!-- cycles through portfolio collection to get tags -->
-<!--{% assign portfolio =  site.portfolio | map: 'tags' | join: ','  | split: ',' | uniq %}-->
-<!--{% for tag in portfolio %}-->
-<!--{% assign ttags = tag | join:'|' | append:'|' %}-->
-<!--{% assign rawtags = rawtags | append:ttags %}-->
-<!--{% endfor %}-->
+<!--cycles through portfolio collection to get tags -->
+{% assign portfolio =  site.portfolio | map: 'tags' | join: ','  | split: ',' | uniq %}
+{% for tag in portfolio %}
+{% assign ttags = tag | join:'|' | append:'|' %}
+{% assign rawtags = rawtags | append:ttags %}
+{% endfor %}
 
 <!-- cycles through _travel collection to get tags -->
 {% assign travel =  site.travel | map: 'tags' | join: ','  | split: ',' | uniq %}
@@ -84,6 +84,22 @@ permalink: /tags/
                     </div>
                 </h5>
                 {% endif %} 
+            {% endfor %}
+
+            <!-- travel -->
+            {% for note in site.travel %}
+            {% if note.tags contains tag %}
+            <h5 class="tag-title">
+                <a href="{{ site.baseurl }}{{ note.url }}">
+                    <i class="fa fa-file-o" aria-hidden="true"></i>
+                    {{ note.title }}
+                </a>
+
+                <div class="meta">
+                    {{ note.date | date: "%B %-d, %Y" }}
+                </div>
+            </h5>
+            {% endif %}
             {% endfor %}
 
         </div>
