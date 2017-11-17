@@ -6,24 +6,25 @@ permalink: /tags/
 
 <div class="home">
 
-<!-- cycles through posts to get tags -->
-{% assign rawtags = "" %}
-{% for post in site.posts %}
-{% assign post_tags = post.tags | join:'|' | append:'|' %}
-{% assign rawtags = rawtags | append:post_tags %}
-{% endfor %}
+<!--&lt;!&ndash; cycles through posts to get tags &ndash;&gt;-->
+<!--{% assign rawtags = "" %}-->
+<!--{% for post in site.posts %}-->
+<!--{% assign post_tags = post.tags | join:'|' | append:'|' %}-->
+<!--{% assign rawtags = rawtags | append:post_tags %}-->
+<!--{% endfor %}-->
 
-<!-- cycles through portfolio collection to get tags -->
-{% assign portfolio =  site.portfolio | map: 'tags' | join: ','  | split: ',' | uniq %}
-{% for tag in portfolio %}
-{% assign ttags = tag | join:'|' | append:'|' %}
-{% assign rawtags = rawtags | append:ttags %}
-{% endfor %}
+<!--&lt;!&ndash; cycles through portfolio collection to get tags &ndash;&gt;-->
+<!--{% assign portfolio =  site.portfolio | map: 'tags' | join: ','  | split: ',' | uniq %}-->
+<!--{% for tag in portfolio %}-->
+<!--{% assign ttags = tag | join:'|' | append:'|' %}-->
+<!--{% assign rawtags = rawtags | append:ttags %}-->
+<!--{% endfor %}-->
 
 <!-- cycles through travel collection to get tags -->
-{% assign travel =  site.travel | map: 'tags' | join: ','  | split: ',' | uniq %}
-{% for tag in travel %}
-{% assign ttags = tag | join:'|' | append:'|' %}
+{% assign rawtags = "" %}
+{% for travel in site.travel %}
+{% assign travel_tags = travel.tags | map: 'tags' | join: ','  | split: ',' | uniq %}
+{% assign ttags = travel_tags | join:'|' | append:'|' %}
 {% assign rawtags = rawtags | append:ttags %}
 {% endfor %}
 
