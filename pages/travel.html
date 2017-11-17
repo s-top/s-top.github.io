@@ -1,18 +1,26 @@
 --- 
-layout: post
+layout: bootstrap
 title : 旅行
 permalink: /travel/
-subtitle: "-----问:为什么喜欢爬山？答:因为山在那。或许旅行一样，因为路在那。-----"
+subtitle: "问:为什么喜欢爬山？\n答:因为山在那。\n或许旅行一样，因为路在那。"
 feature-img: "assets/img/pexels/disco-full.jpeg"
 ---
 
-> 记多少命令和快捷键会让脑袋爆炸呢？
-
-<ul class="listing">
-    {% for travel in site.travel %}
-    <li class="listing-item">
-        <a href="{{ site.url }}">{{ travel.title }}</a>
-    </li>
-    {% endfor %}
-</ul>
+<!-- Travel Grid Section -->
+<section class="portfolio">
+    <div class="row">
+        {% for item in site.travel %}
+        <div class="col-sm-4 col-xs-4 portfolio-item">
+            <a href="{{ site.url }}{{ item.url }}" class="portfolio-link" data-keyboard="true">
+                <div class="caption" title="{{ item.title }}">
+                    <div class="caption-content">
+                        <i class="fa fa-search-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img src="{{ site.baseurl }}/{{ item.img }}" class="" alt="">
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
 
