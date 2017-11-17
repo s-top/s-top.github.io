@@ -20,6 +20,13 @@ permalink: /tags/
 {% assign rawtags = rawtags | append:ttags %}
 {% endfor %}
 
+<!-- cycles through travel collection to get tags -->
+{% assign travel =  site.travel | map: 'tags' | join: ','  | split: ',' | uniq %}
+{% for tag in travel %}
+{% assign ttags = tag | join:'|' | append:'|' %}
+{% assign rawtags = rawtags | append:ttags %}
+{% endfor %}
+
 <!-- Displays the list of tags-->
 {% assign tags = rawtags | split:'|' | sort | uniq %}
     <div class="tag-list">
