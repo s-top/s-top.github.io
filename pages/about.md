@@ -2,6 +2,7 @@
 layout: page
 title: 关于作者
 permalink: /about/
+subtitle: "Life | What I am creating"
 feature-img: "assets/img/pexels/desk-messy.jpeg"
 ---
 
