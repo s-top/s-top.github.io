@@ -82,8 +82,8 @@ theme_settings:
   str_email: "Email"
   str_next_post: "Next post"
   str_previous_post: "Previous post"
-  str_next_page: "Next"
-  str_previous_page: "Prev"
+  str_next_page: "下一页"
+  str_previous_page: "上一页"
   str_continue_reading: "阅读全文"
   str_javascript_required_disqus: "Please enable JavaScript to view comments."
 
