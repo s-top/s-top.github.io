@@ -50,7 +50,11 @@ tags: [华山,旅行]
 
 ![image]({{ site.baseurl }}/assets/img/travel/huashan/6.jpg)
 
+把这些经历都记载下来，是我纪念一些人和事最好的方式。
 
+华山，我相信，我们还会第三次相遇。
+
+(2017-11-17于西安)
 
 
 
