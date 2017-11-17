@@ -20,7 +20,7 @@ permalink: /tags/
 {% assign rawtags = rawtags | append:ttags %}
 {% endfor %}
 
-<!-- cycles through travel collection to get tags -->
+<!-- cycles through _travel collection to get tags -->
 {% assign travel =  site.travel | map: 'tags' | join: ','  | split: ',' | uniq %}
 {% for travel_tags in travel %}
 {% assign traveltags = travel_tags | join:'|' | append:'|' %}
@@ -86,7 +86,7 @@ permalink: /tags/
                 {% endif %} 
             {% endfor %}
 
-            <!-- travel -->
+            <!-- _travel -->
             {% for travel in site.travel %}
             {% if travel.tags contains tag %}
             <h5 class="tag-title">
