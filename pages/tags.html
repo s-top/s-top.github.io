@@ -22,7 +22,6 @@ permalink: /tags/
 
 <!-- Displays the list of tags-->
 {% assign tags = rawtags | split:'|' | sort | uniq %}
-    <!--tags�б�-->
     <div class="tag-list">
         {% for tag in tags %}
         <a class="button" href="#{{ tag | cgi_escape }}">
