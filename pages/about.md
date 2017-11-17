@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 关于作者
+title: 作者
 permalink: /about/
 feature-img: "assets/img/pexels/circuit.jpeg"
 ---
