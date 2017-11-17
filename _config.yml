@@ -27,8 +27,11 @@ navs:
     label: 搜索
 
   -
+    href: /tags/
+    label: 标签
+  -
     href: /about/
-    label: 关于
+    label: 关于我
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
