@@ -68,7 +68,11 @@ header {
     }
     .post-content {
         @extend %padding-regular;
+
         padding-bottom: 0;
+    }
+    .ff7d33{
+        color: #ff7d33;
     }
     footer {
         @extend %padding-regular;
