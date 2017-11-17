@@ -2,13 +2,26 @@
 layout: bootstrap 
 title : 旅行
 permalink: /travel/
-subtitle: "-----行万里路-----"
+subtitle: "-----问:为什么喜欢爬山？答:因为山在那。或许旅行一样，因为路在那。-----"
 feature-img: "assets/img/pexels/disco-full.jpeg"
 ---
 
-{% for item in site.travel %}
-    <div>
-        {{ item.title }}
+<section class="portfolio">
+    <div class="row">
+        {% for item in site.portfolio %}
+        {% for travel in item.travel %}
+        <div class="col-sm-4 col-xs-4 portfolio-item">
+            <a href="{{ site.url }}{{ travel.url }}" class="portfolio-link" data-keyboard="true">
+                <div class="caption" title="{{ travel.title }}">
+                    <div class="caption-content">
+                        <i class="fa fa-search-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img src="{{ site.baseurl }}/{{ travel.img }}" class="" alt="">
+            </a>
+        </div>
+        {% endfor %}
+        {% endfor %}
     </div>
-{% endfor %}
+</section>
 
