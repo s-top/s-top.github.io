@@ -14,6 +14,8 @@ tags: [乐山，峨眉山,旅行]
 
 ![image]({{ site.baseurl }}/assets/img/travel/emei/1.jpg)
 
+未完。。。
+
 (2017-11-19于西安)
 
 

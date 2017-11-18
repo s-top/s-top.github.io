@@ -66,7 +66,7 @@ tags: [黄山,旅行]
 
 下午开始下雨，什么也看不见。
 
-> 雾
+> 看不见
 
 ![image]({{ site.baseurl }}/assets/img/travel/huangshan/7.jpg)
 
