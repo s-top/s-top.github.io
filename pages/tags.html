@@ -90,7 +90,7 @@ permalink: /tags/
             {% for travel in site.travel %}
             {% if travel.tags contains tag %}
             <h5 class="tag-title">
-                <a href="{{ site.baseurl }}{{ note.url }}">
+                <a href="{{ site.baseurl }}{{ travel.url }}">
                     <i class="fa fa-file-o" aria-hidden="true"></i>
                     {{ travel.title }}
                 </a>
