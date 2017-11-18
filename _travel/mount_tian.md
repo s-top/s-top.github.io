@@ -2,47 +2,51 @@
 layout: post
 title: 仰慕天门山，已久
 img: "assets/img/travel/timenshan/0.jpg"
-date: 18-6-2016
-tags: [泰山,旅行]
+date: 18-4-2017
+tags: [天门山,旅行]
 ---
 
 ![image]({{ site.baseurl }}/{{ page.img }})
 
-2016年6月17日03:55分，利用周六日的机会，我决定坐火车去一趟东岳泰山。
+2017年4月17日21:30分，苏州出发，前往张家界，已计划半年时间。
 
-后来，事实证明，我做了一个错误的决定。
+推掉比赛，感谢xg临时替我。
 
-> 山东的泰安，走出岱庙，步行40分钟可到泰山红门
+后来，事实证明，我的感谢是多余的。这货在后半年的奖学金评比中，因此加分。
 
-![image]({{ site.baseurl }}/assets/img/travel/taishan/2.jpg)
+坐了二十几个小时的火车到达张家界。
 
-22:00开始动身，没有计划，直奔泰山日观峰。
+> 火车上
 
-> 观日出人群
+![image]({{ site.baseurl }}/assets/img/timenshan/2.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/taishan/3.jpg)
+> 张家界站
 
-凌晨3点到达观日点，迎着小雨，坐在石头上，等日出。
+![image]({{ site.baseurl }}/assets/img/timenshan/1.jpg)
 
-> 还是人
+到达张家界第二天，上天门山的电梯。返回的时候，电梯故障，走下来的。
 
-![image]({{ site.baseurl }}/assets/img/travel/taishan/4.jpg)
+> 电梯
 
-> 白天下山
+![image]({{ site.baseurl }}/assets/img/timenshan/3.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/taishan/5.jpg)
+> 风景
 
-期间，接到电话，亲戚住院需要手术，我去帮忙。
+![image]({{ site.baseurl }}/assets/img/timenshan/4.jpg)
 
-匆忙下山，休整，直奔北京。
+> 还是风景
 
-> 再一天，16:00分到达北京站
+![image]({{ site.baseurl }}/assets/img/timenshan/5.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/taishan/6.jpg)
+所谓的玻璃栈道，5元一次。
 
-后来，在北京一待就是7天，好在手术顺利。
+> 玻璃栈道
 
-人生在世，还是健康最重要。
+![image]({{ site.baseurl }}/assets/img/timenshan/6.jpg)
+
+不只是天门山，张家界的旅游开发依然成熟。
+
+原本计划徒步登山，后来发现，游览车、索道无处不去。
 
 (2017-11-18于西安)
 
