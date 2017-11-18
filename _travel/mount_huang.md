@@ -2,7 +2,7 @@
 layout: post
 title: 黄山归来不看岳
 img: "assets/img/travel/huangshan/0.jpg"
-date: 02-10-2017
+date: 02-10-2016
 tags: [泰山,旅行]
 ---
 
