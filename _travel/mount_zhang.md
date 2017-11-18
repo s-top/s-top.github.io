@@ -34,17 +34,17 @@ tags: [张家界,旅行]
 
 ![image]({{ site.baseurl }}/assets/img/travel/zhangjiajie/4.jpg)
 
-> 某位领导
+> 某位领导的字
 
 ![image]({{ site.baseurl }}/assets/img/travel/zhangjiajie/8.jpg)
 
-晚上就住在山上了，美团78元，缺水。
+晚上就住在山上了，米兰客栈，美团78元，缺水。
 
 > 住宿指示牌
 
 ![image]({{ site.baseurl }}/assets/img/travel/zhangjiajie/5.jpg)
 
-我爬过不少次山了，一次日出也没遇到。
+我爬过不少次山了，没有遇到过一次日出。
 
 > 依然没有日出
 
@@ -56,11 +56,11 @@ tags: [张家界,旅行]
 
 ![image]({{ site.baseurl }}/assets/img/travel/zhangjiajie/7.jpg)
 
-期间，找到一个导游问路，比我小一岁，瞎聊。
+期间，找一个导游问路，比我小一岁，瞎聊。
 
 跟我讲生活节奏不规律，晚上不睡、早上不起、勤快点的就出来带带团云云。
 
-离开前，把我雨衣给她。新雨衣，我用不上了。
+离开前，把我雨衣给她。新的，我用不上了。
 
 打伞离开。
 
