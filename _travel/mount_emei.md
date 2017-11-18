@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 独行侠，风烟俱净闯天界
+title: 徒步60公里峨眉路
 img: "assets/img/travel/emei/0.jpg"
 date: 6-8-2017
 tags: [乐山，峨眉山,旅行]
