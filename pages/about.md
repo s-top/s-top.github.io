@@ -8,6 +8,6 @@ feature-img: "assets/img/pexels/desk-messy.jpeg"
 
 [S-top's Blog](https://s-top.github.io/)
 
-[S-top's Github](username：s-top)
+[S-top's Github](https://github.com/s-top)
 
-[S-top's Email]394985485@qq.com
+[S-top's Email] 394985485@qq.com
