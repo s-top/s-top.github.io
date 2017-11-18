@@ -36,7 +36,7 @@ tags: [张家界,旅行]
 
 > 某位领导
 
-![image]({{ site.baseurl }}/assets/img/travel/zhangjiajie/7.jpg)
+![image]({{ site.baseurl }}/assets/img/travel/zhangjiajie/8.jpg)
 
 晚上就住在山上了，美团78元，缺水。
 
