@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 悦溪水劲松，不如夜爬西岳华山
+title: 悦秀水劲松，不如夜爬西岳华山
 img: "assets/img/travel/huashan/7.jpg"
 date: 25-3-2016
 tags: [华山,旅行]
