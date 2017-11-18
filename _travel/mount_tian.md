@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 仰慕天门山，已久
+title: 天门山，仰慕已久
 img: "assets/img/travel/timenshan/0.jpg"
 date: 18-4-2017
 tags: [天门山,旅行]
@@ -8,7 +8,7 @@ tags: [天门山,旅行]
 
 ![image]({{ site.baseurl }}/{{ page.img }})
 
-2017年4月17日21:30分，苏州出发，前往张家界，已计划半年时间。
+2017年4月17日21:30分，苏州出发，前往张家界，已计划半年。
 
 推掉比赛，感谢xg临时替我。
 
