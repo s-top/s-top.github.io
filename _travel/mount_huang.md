@@ -3,14 +3,14 @@ layout: post
 title: 黄山归来不看岳
 img: "assets/img/travel/huangshan/0.jpg"
 date: 02-10-2016
-tags: [泰山,旅行]
+tags: [黄山,旅行]
 ---
 
 ![image]({{ site.baseurl }}/{{ page.img }})
 
 2017年10月01日，准备去黄山，蓄谋已久。
 
-10月02日07:30分，从苏州到达黄山站，一晚上。
+10月02日07:30分，从苏州坐火车一晚上，到达黄山站。
 
 > 破旧的黄山站
 
@@ -18,7 +18,7 @@ tags: [泰山,旅行]
 
 出站后，坐小巴车到山脚，20元。
 
-8:20左右开始爬山。
+8:20分左右开始爬山。
 
 > 慈光阁
 
@@ -54,7 +54,7 @@ tags: [泰山,旅行]
 
 ![image]({{ site.baseurl }}/assets/img/travel/huangshan/4.jpg)
 
-中午到达天都峰
+中午到达天都峰。
 
 > 天都峰
 
@@ -64,7 +64,7 @@ tags: [泰山,旅行]
 
 ![image]({{ site.baseurl }}/assets/img/travel/huangshan/10.jpg)
 
-什么也看不见
+下午开始下雨，什么也看不见。
 
 > 雾
 
