@@ -3,7 +3,7 @@ layout: post
 title: 天门山，仰慕已久
 img: "assets/img/travel/timenshan/0.jpg"
 date: 18-4-2017
-tags: [天门山,旅行]
+tags: [张家界，天门山,旅行]
 ---
 
 ![image]({{ site.baseurl }}/{{ page.img }})
