@@ -18,31 +18,31 @@ tags: [天门山,旅行]
 
 > 火车上
 
-![image]({{ site.baseurl }}/assets/img/timenshan/2.jpg)
+![image]({{ site.baseurl }}/assets/img/travel/timenshan/2.jpg)
 
 > 张家界站
 
-![image]({{ site.baseurl }}/assets/img/timenshan/1.jpg)
+![image]({{ site.baseurl }}/assets/img/travel/timenshan/1.jpg)
 
 到达张家界第二天，上天门山的电梯。返回的时候，电梯故障，走下来的。
 
 > 电梯
 
-![image]({{ site.baseurl }}/assets/img/timenshan/3.jpg)
+![image]({{ site.baseurl }}/assets/img/travel/timenshan/3.jpg)
 
 > 风景
 
-![image]({{ site.baseurl }}/assets/img/timenshan/4.jpg)
+![image]({{ site.baseurl }}/assets/img/travel/timenshan/4.jpg)
 
 > 还是风景
 
-![image]({{ site.baseurl }}/assets/img/timenshan/5.jpg)
+![image]({{ site.baseurl }}/assets/img/travel/timenshan/5.jpg)
 
 所谓的玻璃栈道，5元一次。
 
 > 玻璃栈道
 
-![image]({{ site.baseurl }}/assets/img/timenshan/6.jpg)
+![image]({{ site.baseurl }}/assets/img/travel/timenshan/6.jpg)
 
 不只是天门山，张家界的旅游开发依然成熟。
 
