@@ -3,7 +3,7 @@ layout: post
 title: 徒步60公里峨眉路
 img: "assets/img/travel/emei/0.jpg"
 date: 6-8-2017
-tags: [乐山，峨眉山,旅行]
+tags: [乐山,峨眉山,旅行]
 ---
 
 ![image]({{ site.baseurl }}/{{ page.img }})
