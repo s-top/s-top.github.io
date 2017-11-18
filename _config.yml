@@ -8,27 +8,27 @@ url: "https://s-top.github.io"
 navs:
   -
     href: /
-    label: 首页
+    label: 首页 |
 
   -
     href: /blog/
-    label: 全部博客
+    label: 全部博客 |
 
   -
     href: /portfolio/
-    label: 我的代码
+    label: 我的代码 |
 
   -
     href: /travel/
-    label: 我的旅行
+    label: 我的旅行 |
 
   -
     href: /search/
-    label: 搜索
+    label: 搜索 |
 
   -
     href: /tags/
-    label: 标签
+    label: 标签 |
   -
     href: /about/
     label: 关于
