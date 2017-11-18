@@ -32,7 +32,7 @@ tags: [泰山,旅行]
 
 ![image]({{ site.baseurl }}/assets/img/travel/taishan/5.jpg)
 
-期间，接到电话，亲戚住院需要手术，让我帮忙。
+期间，接到电话，亲戚住院需要手术，我去帮忙。
 
 匆忙下山，休整，直奔北京。
 
