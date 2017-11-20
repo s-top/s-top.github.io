@@ -8,7 +8,7 @@ url: "https://s-top.github.io"
 navs:
   -
     href: /
-    label: 首页 |
+    label: 博客首页 |
 
   -
     href: /blog/
@@ -24,14 +24,14 @@ navs:
 
   -
     href: /search/
-    label: 搜索 |
+    label: 全网搜索 |
 
   -
     href: /tags/
-    label: 标签 |
+    label: 全部标签 |
   -
     href: /about/
-    label: 关于
+    label: 关于作者
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
