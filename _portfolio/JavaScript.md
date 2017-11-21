@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Ninja
-img: "assets/img/portfolio/github.png"
-date: April, 08 2014
+img: "assets/img/portfolio/javascript.png"
+date: November, 21 2017
 tags: [JavaScript,代码]
 ---
 
