@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ninja
+title: JavaScript
 img: "assets/img/portfolio/javascript.png"
 date: November, 21 2017
 tags: [JavaScript,代码]

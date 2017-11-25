@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ninja
+title: Python
 img: "assets/img/portfolio/python.png"
 date: November, 21 2017
 tags: [Python,代码]
