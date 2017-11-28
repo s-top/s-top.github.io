@@ -113,9 +113,6 @@ collections:
   blog:
       output: true
       permalink: /:collection/:name
-  opus:
-      output: true
-      permalink: /:collection/:name
 # BUILD SETTINGS
 markdown: kramdown
 highlighter: rouge
