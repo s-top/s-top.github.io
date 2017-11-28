@@ -1,3 +1,5 @@
-个人博客，用于记录学习、记录生活
+原文：https://github.com/Sylhare/Type-on-Strap
 
-https://s-top.github.io/
+>个人博客，用于记录学习、记录生活
+
+>https://s-top.github.io/
