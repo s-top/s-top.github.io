@@ -3,7 +3,7 @@ layout: post
 title: 黄山归来不看岳
 img: "assets/img/travel/huangshan/0.jpg"
 date: 02-10-2016
-tags: [黄山,旅行]
+tags: [旅行]
 ---
 
 ![image]({{ site.baseurl }}/{{ page.img }})

@@ -3,7 +3,7 @@ layout: post
 title: 独行侠，风烟俱净闯天界
 img: "assets/img/travel/zhangjiajie/0.jpg"
 date: 20-4-2017
-tags: [张家界,旅行]
+tags: [旅行]
 ---
 
 ![image]({{ site.baseurl }}/{{ page.img }})

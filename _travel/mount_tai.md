@@ -3,7 +3,7 @@ layout: post
 title: 48个小时的奔波,只为东岳泰山
 img: "assets/img/travel/taishan/1.jpg"
 date: 18-6-2016
-tags: [泰山,旅行]
+tags: [旅行]
 ---
 
 ![image]({{ site.baseurl }}/{{ page.img }})
