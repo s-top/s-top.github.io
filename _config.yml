@@ -50,7 +50,7 @@ theme_settings:
      <p>Faith | What I've always believed</p>
   header_text_feature_image: assets/img/pexels/book-glass.jpeg
   footer_text: >
-   Powered by <a href="https://github.com/s-top">S-top</a>
+    Powered by <a href="https://jekyllrb.com/">Jekyll</a>
 
   # Icons
   rss: false
