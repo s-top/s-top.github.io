@@ -114,7 +114,7 @@ collections:
       output: true
       permalink: /:collection/:name
 # BUILD SETTINGS
-markdown: markdown
+markdown: kramdown
 highlighter: rouge
 sass:
   sass_dir: _sass
