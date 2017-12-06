@@ -46,7 +46,7 @@ theme_settings:
 
   # Header and footer text
   header_text: >
-     <p>“认真，你就赢了。”</p>
+     <p>“理解的越多，需要的探索就越少。”</p>
 
      <p>Faith | What I've always believed</p>
   header_text_feature_image: assets/img/pexels/book-glass.jpeg
