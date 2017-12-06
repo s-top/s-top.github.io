@@ -1,6 +1,7 @@
 # SITE CONFIGURATION
 baseurl: ""
 url: "https://s-top.github.io"
+latex: "http://blog.csdn.net/zdk930519/article/details/54137476"
 
 # ---------------- #
 #    Navigation    #

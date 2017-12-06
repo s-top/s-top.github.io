@@ -43,6 +43,6 @@ $$sample_k=R(s,π(s),s_k')+γV_i^π(s_k')$$
 
 >最后平均可得效用为：
 
-$$V_i+1^π(s)<-\quad \sum_{k}sample_k/k$$
+$$V_(i+1)^π(s)<-\quad \sum_{k}sample_k/k$$
 
 #### 2.基于模型的估计
