@@ -25,12 +25,11 @@ tags: [科普]
 
 ```python
    //records[i] = [用户(u),物品(i),实际评分(rui),预测评分(pui)]
-
    def RMSE(records):
         return math.sqrt(sum([(rui-pui)*(rui-pui) for u,i,rui,pui in records]) / float(len(records)))
 
    def MAE(records):
-   return sum([abs(rui-pui) for u,i,rui,pui in records]) / float(len(records))
+        return sum([abs(rui-pui) for u,i,rui,pui in records]) / float(len(records))
 ```
 
 RMSE加大了对预测不准的用户物品评分的惩罚（平方项的惩罚），因而对系统的评测更加苛刻。
@@ -39,9 +38,9 @@ RMSE加大了对预测不准的用户物品评分的惩罚（平方项的惩罚�
 
 > TopN推荐（个性化的推荐列表）
 
-> 准确率(precision)/召回率(recall)，R(u)是用户在训练集上的行为，T(u)是用户在测试集上的行为
-
 ![image]({{ site.baseurl }}/assets/img/blog/2018-04-18-Recommender/4.png)
+
+准确率(precision)/召回率(recall)，R(u)是用户在训练集上的行为，T(u)是用户在测试集上的行为
 
 > 用python代码求precision和recall：
 
@@ -90,9 +89,6 @@ RMSE加大了对预测不准的用户物品评分的惩罚（平方项的惩罚�
 > 基尼系数的计算原理
 
 ![image]({{ site.baseurl }}/assets/img/blog/2018-04-18-Recommender/7.png)
-
-
-
 
 #### 离线实验
 
