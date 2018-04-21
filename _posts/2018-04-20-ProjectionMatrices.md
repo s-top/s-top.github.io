@@ -49,12 +49,14 @@ tags: [科普]
 
 ![image]({{ site.baseurl }}/assets/img/blog/2018-04-20-Projection/8.png)
 
-#### (待更新)
+#### (待更新。。。)
 
 最小二乘法的解与矩阵投影时对变量求解的目标是一致的。
 
 #### 原文资料
 
 [最小二乘法与投影](https://blog.csdn.net/qq_29573053/article/details/79159752)
+
+
 
 
