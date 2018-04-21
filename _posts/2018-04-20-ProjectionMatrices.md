@@ -43,11 +43,11 @@ tags: [科普]
 
 #### 投影矩阵(projection matrix)：
 
-![image]({{ site.baseurl }}/assets/img/blog/2018-04-20-Projection/5.png)
+![image]({{ site.baseurl }}/assets/img/blog/2018-04-20-Projection/7.png)
 
 > 我们最需要关注的是投影矩阵的两个性质：
 
-![image]({{ site.baseurl }}/assets/img/blog/2018-04-20-Projection/6.png)
+![image]({{ site.baseurl }}/assets/img/blog/2018-04-20-Projection/8.png)
 
 #### (待更新)
 
