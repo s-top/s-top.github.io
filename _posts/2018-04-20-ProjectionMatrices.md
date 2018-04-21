@@ -11,7 +11,7 @@ tags: [科普]
 
 > 一个向量(b)在另一个向量(a)上的投影(实际上就是寻找在a上离b最近的点)：
 
-![image]({{ site.baseurl }}/assets/img/blog/2018-04-12-Projection/1.png)
+![image]({{ site.baseurl }}/assets/img/blog/2018-04-20-Projection/1.png)
 
 我们假设投影点是向量上的一点p，可以规定p=xa（x是某个数）。
 
