@@ -19,11 +19,11 @@ tags: [科普]
 
 > e与p也就是a垂直，所以有:
 
-![image]({{ site.baseurl }}/assets/img/blog/2018-04-12-Projection/2.png)
+![image]({{ site.baseurl }}/assets/img/blog/2018-04-20-Projection/2.png)
 
 > 展开化简得到：
 
-![image]({{ site.baseurl }}/assets/img/blog/2018-04-12-Projection/3.png)
+![image]({{ site.baseurl }}/assets/img/blog/2018-04-20-Projection/3.png)
 
 * 如果改变b，那么p相对应改变，然而改变a，p无变化。
 
