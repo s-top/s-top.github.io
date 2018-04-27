@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 仙境武当，一个人的祈福旅程
-img: "assets/img/travel/zhangjiajie/1.jpg"
+img: "assets/img/travel/wudang/1.jpg"
 date: 12-4-2018
 tags: [旅行]
 ---
