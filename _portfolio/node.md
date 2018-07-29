@@ -32,7 +32,7 @@ Demo访问地址：[http://47.95.209.24:3004/](http://47.95.209.24:3004/)
 
 #### [NSK数据可视化样例]
 
-![image]({{ site.baseurl }}/assets/img/portfolio/Node/6.png)
+![image]({{ site.baseurl }}/assets/img/portfolio/Node/9.png)
 
 ![image]({{ site.baseurl }}/assets/img/portfolio/Node/8.png)
 
