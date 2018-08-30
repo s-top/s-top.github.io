@@ -4,46 +4,14 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body id="example">
-    <ul id="demo">
-        <li v-for="item in items" class="item-{{$index}}}">
-            {{$index}} - {{parentMessage}}
-            {{item.msg}}
-        </li>
-    </ul>
-
-    <div v-for="item in items" track-by="_uid"></div>
-    <div v-for="item in items" track-by="$index"></div>
-    <div v-for="item in items">
-        {{$key}}:{{item}}
-    </div>
-    <div v-for="(key,item) in items">
-        {{key}}:{{item}}
-    </div>
-
-    <span v-text="msg"></span>
-    <span>{{mgs}}</span>
-
-
-
-
-    <div id="exampleA">
-        <div v-bind="{id: someProp, 'otherAttr': otherProp}"></div>
-    </div>
-
-    <my-component :prop="someThing"></my-component>
-    <my-component :prop.sync="someThing"></my-component>
-    <my-component :prop.once="someThing"></my-component>
-
-
-
+<body id="demo">
+    <my-directive class="hello" name="hi"></my-directive>
 </body>
 <script>
-    var demo = new Vue({
-        el: 'exampleA',
-        data:{
-            someProp: 'idName',
-            otherProp: 'prop'
+    Vue.elementDirective('my-directive', {
+        bind: function(){
+            console.log(this.el.className);
+            console.log(this.el.getAttribute('name'));
         }
     })
 </script>
