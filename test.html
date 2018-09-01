@@ -1,18 +1,60 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
+<head>
+    <meta charset="utf-8">
+    <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
 </head>
-<body id="demo">
-    <my-directive class="hello" name="hi"></my-directive>
+<body>
+    <div id="app">
+        <input type="text" v-model="didi"/>
+        <input type="text" v-model="family"/>
+        <input type="text" v-model="didiFamily"/>
+        didi = {{ didi }}
+        family = {{ family }}
+        didiFamily = {{ didiFamily }}
+        <p>原始字符串: {{ message }}</p>
+        <p>计算后反转字符串: {{ reversedMessage }}</p>
+
+        <!--<div v-for="item in items | filterBy 'hello'"></div>-->
+        <!--<div v-for="item in items | filterBy 'hello' in 'name'"></div>-->
+        <!--<span v-text="message | wrap 'before' 'after'"></span>-->
+    </div>
+
+    <div id="example" class="static" v-bind:class="{'classA': isRipe, 'classB': isNotRipe}"></div>
+    <script>
+        var vmClass = new Vue({
+            el: '#example',
+            data: {
+                isRipe: true,
+                isNotRipe: false
+            }
+        });
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                message: 'Runoob',
+                didi: 'didi',
+                family: 'family'
+            },
+            computed: {
+                // 计算属性的 getter
+                reversedMessage: function () {
+                    // `this` 指向 vm 实例
+                    return this.message.split('').reverse().join('')
+                },
+                didiFamily: {
+                    get: function () {
+                        return this.didi + " " + this.family
+                    },
+                    set: function (newValue) {
+                        var names = newValue.split(" ");
+                        this.didi = names[0];
+                        this.family = names[1];
+                    }
+                }
+            }
+        })
+    </script>
 </body>
-<script>
-    Vue.elementDirective('my-directive', {
-        bind: function(){
-            console.log(this.el.className);
-            console.log(this.el.getAttribute('name'));
-        }
-    })
-</script>
 </html>
