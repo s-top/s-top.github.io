@@ -4,6 +4,20 @@
     <meta charset="utf-8">
     <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
     <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <style type="text/css">
+        .expand-transition {
+            transition: all .3s ease;
+            height: 30px;
+            padding: 10px;
+            background-color: #eee;
+            overflow: hidden;
+        }
+        .expand-enter, .expand-leave {
+            height: 0;
+            padding: 0 10px;
+            opacity: 0;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -22,7 +36,24 @@
     </div>
 
     <div id="example" class="static" v-bind:class="{'classA': isRipe, 'classB': isNotRipe}"></div>
+
+    <div v-if="show" :transition="transitionName"></div>
+
+    <div v-show="ok" class="animated" transition="bounce"></div>
+
     <script>
+        Vue.transition('bounce', {
+           enterClass: 'bounceInLeft',
+           leaveClass: 'bounceOutRight'
+        });
+        new Vue({
+            el: '...',
+            data: {
+                show: false,
+                transitionName: 'fade'
+            }
+        });
+
         var vmClass = new Vue({
             el: '#example',
             data: {
