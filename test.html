@@ -17,6 +17,12 @@
             padding: 0 10px;
             opacity: 0;
         }
+        .myStaggeredTransition-transition{
+            transition: all .5s ease;
+            overflow: hidden;
+            margin: 0;
+            height: 20px;
+        }
     </style>
 </head>
 <body>
@@ -41,7 +47,40 @@
 
     <div v-show="ok" class="animated" transition="bounce"></div>
 
+    <div v-for="item in list" transition="myStaggeredTransition" stagger="100"></div>
+
     <script>
+        Vue.transition('myStaggeredTransition', {
+            stagger: function (index) {
+                //每个过渡项目增加50ms延时
+                //但是最大延时限制为300ms
+                return Math.min(300, index * 50)
+            }
+        });
+
+
+        Vue.transition('fade', {
+            css: false,
+            enter: function (el, done) {
+                //元素已被插入DOM中
+                //在动画结束后调用done
+                $(el)
+                    .css('opacity', 0)
+                    .animate({opacity: 1}, 1000, done)
+            },
+            enterCancelled: function(el) {
+                $(el).stop();
+            },
+            leave: function (el, done) {
+                //与enter相同
+                $(el).animate({opacity: 0}, 1000, done)
+            },
+            leaveCancellde: function(el) {
+                $(el).stop();
+            }
+        });
+
+
         Vue.transition('bounce', {
            enterClass: 'bounceInLeft',
            leaveClass: 'bounceOutRight'
