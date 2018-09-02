@@ -49,7 +49,20 @@
 
     <div v-for="item in list" transition="myStaggeredTransition" stagger="100"></div>
 
+    <div id="exampleButton">
+        <button v-on:click="greet"></button>
+    </div>
     <script>
+        var vm = new Vue({
+            el: '#exampleButton',
+            methods:{
+                greet: function (event) {
+                    //doSomething
+                }
+            }
+        });
+
+
         Vue.transition('myStaggeredTransition', {
             stagger: function (index) {
                 //每个过渡项目增加50ms延时
