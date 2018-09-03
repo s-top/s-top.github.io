@@ -62,6 +62,14 @@ mounted : 在这发起后端请求，拿回数据，配合路由钩子做一些�
 beforeDestroy : 你确认删除XX吗？
 destroyed : 当前组件已被删除，清空相关内容
 
+#### 参考博文
+
+[城南-JS那些事儿](https://segmentfault.com/a/1190000008010666)
+
+[fsrookie-详解vue生命周期](https://segmentfault.com/a/1190000011381906)
+
+[Vue.js官网](https://cn.vuejs.org/v2/guide/instance.html)
+
 
 
 
