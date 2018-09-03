@@ -9,7 +9,7 @@ tags: [前端技术]
 
 ### 九、生命周期
 
-在Vue.js中，在实例化Vue之前，它们以HTML的文本形式保存在文本编辑器中。当实例化后将经历创建、编译和销毁三个主要阶段。
+在Vue.js中，在实例化Vue之前，它们以HTML的文本形式保存在文本编辑器中。当实例化后，其将经历创建、编译和销毁三个主要阶段。
 
 ![image]({{ site.baseurl }}/assets/img/blog/2018-09-03-LifeCycle/index.png)
 
