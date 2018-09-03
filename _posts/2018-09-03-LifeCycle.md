@@ -23,15 +23,15 @@ tags: [前端技术]
 
 <br>
 
-生命周期  | 生命周期说明
+生命周期  | 图解生命周期  | 生命周期说明
 --------- | ---------
 beforeCreate之前  |  ![image]({{ site.baseurl }}/assets/img/blog/2018-09-03-LifeCycle/0.png) |
 --------- | ---------
 beforeCreate -> created  |  ![image]({{ site.baseurl }}/assets/img/blog/2018-09-03-LifeCycle/3.png) | 在这个生命周期之间，进行初始化事件，进行数据的观测，可以看到在created的时候数据已经和data属性进行绑定（放在data中的属性当值发生改变的同时，视图也会改变）
 --------- | --------- | ---------
-created -> beforeMount  | ![image]({{ site.baseurl }}/assets/img/blog/2018-09-03-LifeCycle/2.png)
+created -> beforeMount  | ![image]({{ site.baseurl }}/assets/img/blog/2018-09-03-LifeCycle/4.png) | 首先会判断对象是否有el选项。如果有的话就继续向下编译，如果没有el选项，则停止编译，也就意味着停止了生命周期，直到在该vue实例上调用vm.$mount(el)
 --------- | ---------
-beforeMount  |
+beforeMount -> mounted |  | 可以看到此时是给vue实例对象添加$el成员，并且替换掉挂在的DOM元素。因为在之前console中打印的结果可以看到beforeMount之前el上还是undefined
 --------- | ---------
 mounted  |
 --------- | ---------
