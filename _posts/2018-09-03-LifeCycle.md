@@ -13,29 +13,31 @@ tags: [前端技术]
 
 ![image]({{ site.baseurl }}/assets/img/blog/2018-09-03-LifeCycle/1.png)
 
+可以看到在vue一整个的生命周期中会有很多钩子函数提供给我们在vue生命周期不同的时刻进行操作, 那么先列出所有的钩子函数:
+
+> beforeCreate-created-beforeMount-mounted-beforeUpdate-updated-beforeDestroy-destroyed
+
 #### 生命周期钩子：
 
 <br>
 
 生命周期  | 生命周期说明
 --------- | ---------
-init  | 在实例开始初始化时同步调用。此时数据观测、事件和Watcher都尚未初始化
+beforeCreate -> created  | 在这个生命周期之间，进行初始化事件，进行数据的观测，可以看到在created的时候数据已经和data属性进行绑定（放在data中的属性当值发生改变的同时，视图也会改变）
 --------- | ---------
-created  | 在实例创建之后同步调用（数据绑定、计算属性、方法、Watcher/事件回调），但是还没有开始DOM编译，$el还不存在。
+created -> beforeMount  | ![image]({{ site.baseurl }}/assets/img/blog/2018-09-03-LifeCycle/2.png)
 --------- | ---------
-beforeCompile  | 在编译开始前调用
+beforeMount  |
 --------- | ---------
-compiled  | 在编译结束后调用。此时所有的指令已生效，因为数据的变化将触发DOM更新。但是不担保$el已插入文档
+mounted  |
 --------- | ---------
-ready  | 在编译结束和$el第一次插入文档之后调用，如在第一次attached钩子之后调用。注意，必须由Vue插入才触发ready钩子的
+beforeUpdate  |
 --------- | ---------
-attached  | vm.$el插入DOM时调用。必须是由指令或实例方法($appendTo())插入，直接操作vm.$el不会触发这个钩子
+updated  |
 --------- | ---------
-detached  | 在vm.$el从DOM中删除时调用。必须是由指令或实例方法删除
+beforeDestroy  |
 --------- | ---------
-beforeDestroy  | 在开始销毁实例时调用
---------- | ---------
-destroyed  | 在实例销毁之后调用。此时所有的绑定和实例的指令已经解绑，所有的子实例也已经被销毁。如果有离开过渡，destroyed钩子在过渡完成之后调用
+destroyed  |
 --------- | ---------
 
 <br>
