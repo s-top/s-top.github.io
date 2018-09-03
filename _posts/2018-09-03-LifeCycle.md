@@ -54,7 +54,7 @@ beforeMount : 完成了 el 和 data 初始化
 
 mounted : 完成挂载
 
-另外，在标红处，我们能发现el还是 {{message}}，这里就是应用的 Virtual DOM（虚拟Dom）技术，先把坑占住了。到后面mounted挂载的时候再把值渲染进去。
+另外，在标红处，我们能发现el还是\{\{message\}\}，这里就是应用的 Virtual DOM（虚拟Dom）技术，先把坑占住了。到后面mounted挂载的时候再把值渲染进去。
 
 > destroy 相关:
 
