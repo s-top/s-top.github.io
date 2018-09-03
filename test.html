@@ -1,56 +1,77 @@
 <!DOCTYPE html>
-<html xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
-    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
-    <style type="text/css">
-
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue生命周期学习</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
 </head>
 <body>
-    <!--子组件模块-->
-    <template id="child-template">
-        <input type="text" v-model="msg" title=""/>
-        <button v-on:click="notify">Dispatch Event</button>
-    </template>
-    <!--父组件模板-->
-    <div id="enents-example">
-        <p>Messages: {{messages | json}}</p>
-        <child></child>
+    <div id="app">
+        <h1>{{message}}</h1>
     </div>
-    <script>
-        //注册子组件
-        //将当前消息派发出去
-        Vue.component('child', {
-            template: 'child-template',
-            data: function () {
-                return {msg: 'hello'}
-            },
-            methods: {
-                notify: function () {
-                    if(this.msg.trim()){
-                        this.$dispatch('child-msg', this.msg);
-                        this.msg = '';
-                    }
-                }
-            }
-        });
-        //初始化父组件
-        //收到消息时将事件推入一个数组中
-        var parent = new Vue({
-            el: '#events-example',
-            data: {
-                messages: []
-            },
-            //在创建实例时，'event'选项简单滴调用'$on'
-            events: {
-                'child-msg': function (msg) {
-                    //事件回调内的'this'自动绑定到注册它的实例上
-                    this.messages.push(msg);
-                }
-            }
-        })
-    </script>
 </body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            message: 'Vue的生命周期'
+        },
+        beforeCreate: function() {
+            console.group('------beforeCreate创建前状态------');
+            console.log("%c%s", "color:red" , "el     : " + this.$el); //undefined
+            console.log("%c%s", "color:red","data   : " + this.$data); //undefined
+            console.log("%c%s", "color:red","message: " + this.message)
+        },
+        created: function() {
+            console.group('------created创建完毕状态------');
+            console.log("%c%s", "color:red","el     : " + this.$el); //undefined
+            console.log("%c%s", "color:red","data   : " + this.$data); //已被初始化
+            console.log("%c%s", "color:red","message: " + this.message); //已被初始化
+        },
+        beforeMount: function() {
+            console.group('------beforeMount挂载前状态------');
+            console.log("%c%s", "color:red","el     : " + (this.$el)); //已被初始化
+            console.log(this.$el);
+            console.log("%c%s", "color:red","data   : " + this.$data); //已被初始化
+            console.log("%c%s", "color:red","message: " + this.message); //已被初始化
+        },
+        mounted: function() {
+            console.group('------mounted 挂载结束状态------');
+            console.log("%c%s", "color:red","el     : " + this.$el); //已被初始化
+            console.log(this.$el);
+            console.log("%c%s", "color:red","data   : " + this.$data); //已被初始化
+            console.log("%c%s", "color:red","message: " + this.message); //已被初始化
+        },
+        beforeUpdate: function () {
+            console.group('beforeUpdate 更新前状态===============》');
+            console.log("%c%s", "color:red","el     : " + this.$el);
+            console.log(this.$el);
+            console.log("%c%s", "color:red","data   : " + this.$data);
+            console.log("%c%s", "color:red","message: " + this.message);
+        },
+        updated: function () {
+            console.group('updated 更新完成状态===============》');
+            console.log("%c%s", "color:red","el     : " + this.$el);
+            console.log(this.$el);
+            console.log("%c%s", "color:red","data   : " + this.$data);
+            console.log("%c%s", "color:red","message: " + this.message);
+        },
+        beforeDestroy: function () {
+            console.group('beforeDestroy 销毁前状态===============》');
+            console.log("%c%s", "color:red","el     : " + this.$el);
+            console.log(this.$el);
+            console.log("%c%s", "color:red","data   : " + this.$data);
+            console.log("%c%s", "color:red","message: " + this.message);
+        },
+        destroyed: function () {
+            console.group('destroyed 销毁完成状态===============》');
+            console.log("%c%s", "color:red","el     : " + this.$el);
+            console.log(this.$el);
+            console.log("%c%s", "color:red","data   : " + this.$data);
+            console.log("%c%s", "color:red","message: " + this.message)
+        }
+    })
+</script>
 </html>
