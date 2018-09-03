@@ -11,12 +11,13 @@ tags: [前端技术]
 
 在Vue.js中，在实例化Vue之前，它们以HTML的文本形式保存在文本编辑器中。当实例化后将经历创建、编译和销毁三个主要阶段。
 
-![image]({{ site.baseurl }}/assets/img/blog/2018-09-02-LifeCycle/1.png)
+![image]({{ site.baseurl }}/assets/img/blog/2018-09-03-LifeCycle/1.png)
 
 #### 生命周期钩子：
 
 <br>
-
+生命周期  | 生命周期说明
+--------- | ---------
 init  | 在实例开始初始化时同步调用。此时数据观测、事件和Watcher都尚未初始化
 --------- | ---------
 created  | 在实例创建之后同步调用（数据绑定、计算属性、方法、Watcher/事件回调），但是还没有开始DOM编译，$el还不存在。
