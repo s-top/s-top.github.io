@@ -1,140 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
     <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
     <style type="text/css">
-        .expand-transition {
-            transition: all .3s ease;
-            height: 30px;
-            padding: 10px;
-            background-color: #eee;
-            overflow: hidden;
-        }
-        .expand-enter, .expand-leave {
-            height: 0;
-            padding: 0 10px;
-            opacity: 0;
-        }
-        .myStaggeredTransition-transition{
-            transition: all .5s ease;
-            overflow: hidden;
-            margin: 0;
-            height: 20px;
-        }
+
     </style>
 </head>
 <body>
-    <div id="app">
-        <input type="text" v-model="didi"/>
-        <input type="text" v-model="family"/>
-        <input type="text" v-model="didiFamily"/>
-        didi = {{ didi }}
-        family = {{ family }}
-        didiFamily = {{ didiFamily }}
-        <p>原始字符串: {{ message }}</p>
-        <p>计算后反转字符串: {{ reversedMessage }}</p>
-
-        <!--<div v-for="item in items | filterBy 'hello'"></div>-->
-        <!--<div v-for="item in items | filterBy 'hello' in 'name'"></div>-->
-        <!--<span v-text="message | wrap 'before' 'after'"></span>-->
-    </div>
-
-    <div id="example" class="static" v-bind:class="{'classA': isRipe, 'classB': isNotRipe}"></div>
-
-    <div v-if="show" :transition="transitionName"></div>
-
-    <div v-show="ok" class="animated" transition="bounce"></div>
-
-    <div v-for="item in list" transition="myStaggeredTransition" stagger="100"></div>
-
-    <div id="exampleButton">
-        <button v-on:click="greet"></button>
+    <!--子组件模块-->
+    <template id="child-template">
+        <input type="text" v-model="msg" title=""/>
+        <button v-on:click="notify">Dispatch Event</button>
+    </template>
+    <!--父组件模板-->
+    <div id="enents-example">
+        <p>Messages: {{messages | json}}</p>
+        <child></child>
     </div>
     <script>
-        var vm = new Vue({
-            el: '#exampleButton',
-            methods:{
-                greet: function (event) {
-                    //doSomething
+        //注册子组件
+        //将当前消息派发出去
+        Vue.component('child', {
+            template: 'child-template',
+            data: function () {
+                return {msg: 'hello'}
+            },
+            methods: {
+                notify: function () {
+                    if(this.msg.trim()){
+                        this.$dispatch('child-msg', this.msg);
+                        this.msg = '';
+                    }
                 }
             }
         });
-
-
-        Vue.transition('myStaggeredTransition', {
-            stagger: function (index) {
-                //每个过渡项目增加50ms延时
-                //但是最大延时限制为300ms
-                return Math.min(300, index * 50)
-            }
-        });
-
-
-        Vue.transition('fade', {
-            css: false,
-            enter: function (el, done) {
-                //元素已被插入DOM中
-                //在动画结束后调用done
-                $(el)
-                    .css('opacity', 0)
-                    .animate({opacity: 1}, 1000, done)
-            },
-            enterCancelled: function(el) {
-                $(el).stop();
-            },
-            leave: function (el, done) {
-                //与enter相同
-                $(el).animate({opacity: 0}, 1000, done)
-            },
-            leaveCancellde: function(el) {
-                $(el).stop();
-            }
-        });
-
-
-        Vue.transition('bounce', {
-           enterClass: 'bounceInLeft',
-           leaveClass: 'bounceOutRight'
-        });
-        new Vue({
-            el: '...',
+        //初始化父组件
+        //收到消息时将事件推入一个数组中
+        var parent = new Vue({
+            el: '#events-example',
             data: {
-                show: false,
-                transitionName: 'fade'
-            }
-        });
-
-        var vmClass = new Vue({
-            el: '#example',
-            data: {
-                isRipe: true,
-                isNotRipe: false
-            }
-        });
-        var vm = new Vue({
-            el: '#app',
-            data: {
-                message: 'Runoob',
-                didi: 'didi',
-                family: 'family'
+                messages: []
             },
-            computed: {
-                // 计算属性的 getter
-                reversedMessage: function () {
-                    // `this` 指向 vm 实例
-                    return this.message.split('').reverse().join('')
-                },
-                didiFamily: {
-                    get: function () {
-                        return this.didi + " " + this.family
-                    },
-                    set: function (newValue) {
-                        var names = newValue.split(" ");
-                        this.didi = names[0];
-                        this.family = names[1];
-                    }
+            //在创建实例时，'event'选项简单滴调用'$on'
+            events: {
+                'child-msg': function (msg) {
+                    //事件回调内的'this'自动绑定到注册它的实例上
+                    this.messages.push(msg);
                 }
             }
         })
