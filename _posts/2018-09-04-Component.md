@@ -36,15 +36,15 @@ Echarts.js 待更新。。。。
 
 #### 常见问题
 
-1. camelCase & kebab-case
+* camelCase & kebab-case
 
-2. 字面量语法 & 动态语法
+* 字面量语法 & 动态语法
 
-3. 组件选项问题
+* 组件选项问题
 
 传入Vue构造器的多数选项也可以用在Vue.extent()中，不过有两个特例：data和el。
 
-4. 模板解析
+* 模板解析
 
 Vue的模板是DOM模板，使用浏览器原生的解析器而不是自己实现一个。
 
@@ -62,11 +62,11 @@ table只能直接包含thead、tbody、tfoot、tr、caption、col、colgroup
 
 tr只能直接包含th和td
 
-5. 动态组件与异步组件结合
+* 动态组件与异步组件结合
 
-6. 如何解决数据层级结构太深的问题（vm.$set）
+* 如何解决数据层级结构太深的问题（vm.$set）
 
-7. 后端数据交互
+* 后端数据交互
 
 ```javascript
     new Vue({
