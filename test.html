@@ -1,113 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>vue生命周期学习</title>
-    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
+    <meta charset="utf-8">
+    <title>radio button validation example</title>
+    <script src="https://unpkg.com/vue@1.0.26/dist/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue-validator/2.1.3/vue-validator.js"></script>
     <style>
-        a{
-            color:#ccc;
-        }
-        .link a.k{
-            color: #336699;
-        }
-        .link a[href="sss"]{color: #160}
-        #wa {
-            color: #eee;
-        }
+        input.invalid { border-color: red; }
+        .errors { color: red; }
     </style>
 </head>
 <body>
-    <p><div></div></p>
-    <a href=""><a href=""></a></a>
-    <ul><li></li><div></div></ul>
-    <h2><div></div></h2>
-    <div id="wa">
-        <h1 class="link">
-            <a href="sss" class="k">he</a>
-        </h1>
+<div id="app">
+    <h1>Survey</h1>
+    <validity-group field="fruits" v-model="validation" :validators="{required: { message: requiredErrorMsg }}">
+        <legend>Which do you like fruit ?</legend>
+        <input id="apple" type="radio" name="fruit" value="apple" @change="handleValidate" @focusin="handleValidate">
+        <label for="apple">Apple</label>
+        <input id="orange" type="radio" name="fruit" value="orange" @change="handleValidate" @focusin="handleValidate">
+        <label for="orange">Orage</label>
+        <input id="grape" type="radio" name="fruit" value="grage" @change="handleValidate" @focusin="handleValidate">
+        <label for="grape">Grape</label>
+        <input id="banana" type="radio" name="fruit" value="banana" @change="handleValidate" @focusin="handleValidate">
+        <label for="banana">Banana</label>
+        <ul class="errors">
+            <li v-for="error in validation.result.errors">
+                <p :class="error.field + '-' + error.validator">{{error.message}}</p>
+            </li>
+        </ul>
+    </validity-group>
+
+    <div class="errors">
+        <validator-errors :component="'custom-error'" :validation="$validation1"></validator-errors>
     </div>
-    <div id="app">
-        <h1>{{message}}</h1>
-    </div>
-</body>
+
+</div>
 <script>
-    var vm = new Vue({
-        el: '#app',
+
+    Vue.component('custom-error', {
+        props: ['field', 'validator', 'message'],
+        template: '<p class="error-{{field}}-{{validator}}">{{message}}</p>'
+    });
+
+    new Vue({
         data: {
-            message: 'Vue的生命周期'
+            validation: {
+                result: {}
+            }
         },
-        beforeCreate: function() {
-            console.group('------beforeCreate创建前状态------');
-            console.log("%c%s", "color:red" , "el     : " + this.$el); //undefined
-            console.log("%c%s", "color:red","data   : " + this.$data); //undefined
-            console.log("%c%s", "color:red","message: " + this.message)
+        computed: {
+            requiredErrorMsg: function () {
+                return 'Required fruit !!'
+            }
         },
-        created: function() {
-            console.group('------created创建完毕状态------');
-            console.log("%c%s", "color:red","el     : " + this.$el); //undefined
-            console.log("%c%s", "color:red","data   : " + this.$data); //已被初始化
-            console.log("%c%s", "color:red","message: " + this.message); //已被初始化
-        },
-        beforeMount: function() {
-            console.group('------beforeMount挂载前状态------');
-            console.log("%c%s", "color:red","el     : " + (this.$el)); //已被初始化
-            console.log(this.$el);
-            console.log("%c%s", "color:red","data   : " + this.$data); //已被初始化
-            console.log("%c%s", "color:red","message: " + this.message); //已被初始化
-        },
-        mounted: function() {
-            console.group('------mounted 挂载结束状态------');
-            console.log("%c%s", "color:red","el     : " + this.$el); //已被初始化
-            console.log(this.$el);
-            console.log("%c%s", "color:red","data   : " + this.$data); //已被初始化
-            console.log("%c%s", "color:red","message: " + this.message); //已被初始化
-        },
-        beforeUpdate: function () {
-            console.group('beforeUpdate 更新前状态===============》');
-            console.log("%c%s", "color:red","el     : " + this.$el);
-            console.log(this.$el);
-            console.log("%c%s", "color:red","data   : " + this.$data);
-            console.log("%c%s", "color:red","message: " + this.message);
-        },
-        updated: function () {
-            console.group('updated 更新完成状态===============》');
-            console.log("%c%s", "color:red","el     : " + this.$el);
-            console.log(this.$el);
-            console.log("%c%s", "color:red","data   : " + this.$data);
-            console.log("%c%s", "color:red","message: " + this.message);
-        },
-        beforeDestroy: function () {
-            console.group('beforeDestroy 销毁前状态===============》');
-            console.log("%c%s", "color:red","el     : " + this.$el);
-            console.log(this.$el);
-            console.log("%c%s", "color:red","data   : " + this.$data);
-            console.log("%c%s", "color:red","message: " + this.message);
-        },
-        destroyed: function () {
-            console.group('destroyed 销毁完成状态===============》');
-            console.log("%c%s", "color:red","el     : " + this.$el);
-            console.log(this.$el);
-            console.log("%c%s", "color:red","data   : " + this.$data);
-            console.log("%c%s", "color:red","message: " + this.message)
+        methods: {
+            handleValidate: function (e) {
+                var $validity = e.target.$validity;
+                $validity.validate()
+            }
         }
-    })
-
-    function add(a,b){
-        return a+b
-    }
-    function sub(a,b){
-        return a-b
-    }
-
-    console.log(add.call(sub,[3,1]))
-    console.log(add.apply(sub,[3,1]))
-    console.log(add([3,1]))
-    console.log(sub(3,1))
-
-
-
+    }).$mount('#app')
 </script>
+</body>
 </html>
