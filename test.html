@@ -3,63 +3,53 @@
 <head>
     <meta charset="utf-8">
     <title>radio button validation example</title>
-    <script src="https://unpkg.com/vue@1.0.26/dist/vue.min.js"></script>
-    <script src="https://cdn.bootcss.com/vue-validator/2.1.3/vue-validator.js"></script>
-    <style>
-        input.invalid { border-color: red; }
-        .errors { color: red; }
-    </style>
+
 </head>
 <body>
-<div id="app">
-    <h1>Survey</h1>
-    <validity-group field="fruits" v-model="validation" :validators="{required: { message: requiredErrorMsg }}">
-        <legend>Which do you like fruit ?</legend>
-        <input id="apple" type="radio" name="fruit" value="apple" @change="handleValidate" @focusin="handleValidate">
-        <label for="apple">Apple</label>
-        <input id="orange" type="radio" name="fruit" value="orange" @change="handleValidate" @focusin="handleValidate">
-        <label for="orange">Orage</label>
-        <input id="grape" type="radio" name="fruit" value="grage" @change="handleValidate" @focusin="handleValidate">
-        <label for="grape">Grape</label>
-        <input id="banana" type="radio" name="fruit" value="banana" @change="handleValidate" @focusin="handleValidate">
-        <label for="banana">Banana</label>
-        <ul class="errors">
-            <li v-for="error in validation.result.errors">
-                <p :class="error.field + '-' + error.validator">{{error.message}}</p>
-            </li>
-        </ul>
-    </validity-group>
-
-    <div class="errors">
-        <validator-errors :component="'custom-error'" :validation="$validation1"></validator-errors>
-    </div>
-
-</div>
 <script>
 
-    Vue.component('custom-error', {
-        props: ['field', 'validator', 'message'],
-        template: '<p class="error-{{field}}-{{validator}}">{{message}}</p>'
-    });
+    const input = {
+        a:1,
+        b:[1,2,{c:true},[3]],
+        d:{e:2,f:3},
+        g:null
+    };
 
-    new Vue({
-        data: {
-            validation: {
-                result: {}
-            }
-        },
-        computed: {
-            requiredErrorMsg: function () {
-                return 'Required fruit !!'
-            }
-        },
-        methods: {
-            handleValidate: function (e) {
-                var $validity = e.target.$validity;
-                $validity.validate()
+
+
+    Object.flatten = function(obj){
+        var result = {};
+
+        function recurse(src, prop) {
+            var toString = Object.prototype.toString;
+            if (toString.call(src) == '[object Object]') {
+                var isEmpty = true;
+                for (var p in src) {
+                    isEmpty = false;
+                    recurse(src[p], prop ? prop + '.' + p : p)
+                }
+                if (isEmpty && prop) {
+                    result[prop] = {};
+                }
+            } else if (toString.call(src) == '[object Array]') {
+                var len = src.length;
+                if (len > 0) {
+                    src.forEach(function (item, index) {
+                        recurse(item, prop ? prop + '.[' + index + ']' : index);
+                    })
+                } else {
+                    result[prop] = [];
+                }
+            } else {
+                result[prop] = src;
             }
         }
-    }).$mount('#app')
+        recurse(obj,'');
+
+        return result;
+    };
+
+    console.log(Object.flatten(input));
 </script>
 </body>
 </html>
