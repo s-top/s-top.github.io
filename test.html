@@ -3,18 +3,39 @@
 <head>
     <meta charset="utf-8">
     <title>radio button validation example</title>
-
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
 </head>
 <body>
 <script>
-    var template = require('url-template');
-    var email = template.parse('/{email}/{folder}/{id}');
-    //返回 '/user@domain/test/42'
-    emailUrl.expand({
-        email: 'user@domain',
-        folder: 'test',
-        id: 42
-    });
+    const NotFound = { template: '<p>Page not found</p>' }
+    const Home = { template: '<p>home page</p>' }
+    const About = { template: '<p>about page</p>' }
+
+    const routes = {
+        '/': Home,
+        '/about': About
+    }
+
+    new Vue({
+        el: '#app',
+        data: {
+            currentRoute: window.location.pathname
+        },
+        computed: {
+            ViewComponent(){
+            return routes[this.currentRoute] || NotFound
+            }
+        },
+        render (h) { return h(this.ViewComponent) }
+    })
+//    var template = require('url-template');
+//    var email = template.parse('/{email}/{folder}/{id}');
+//    //返回 '/user@domain/test/42'
+//    emailUrl.expand({
+//        email: 'user@domain',
+//        folder: 'test',
+//        id: 42
+//    });
 
 //    const input = {
 //        a:1,
