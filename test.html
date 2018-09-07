@@ -7,49 +7,57 @@
 </head>
 <body>
 <script>
+    var template = require('url-template');
+    var email = template.parse('/{email}/{folder}/{id}');
+    //返回 '/user@domain/test/42'
+    emailUrl.expand({
+        email: 'user@domain',
+        folder: 'test',
+        id: 42
+    });
 
-    const input = {
-        a:1,
-        b:[1,2,{c:true},[3]],
-        d:{e:2,f:3},
-        g:null
-    };
-
-
-
-    Object.flatten = function(obj){
-        var result = {};
-
-        function recurse(src, prop) {
-            var toString = Object.prototype.toString;
-            if (toString.call(src) == '[object Object]') {
-                var isEmpty = true;
-                for (var p in src) {
-                    isEmpty = false;
-                    recurse(src[p], prop ? prop + '.' + p : p)
-                }
-                if (isEmpty && prop) {
-                    result[prop] = {};
-                }
-            } else if (toString.call(src) == '[object Array]') {
-                var len = src.length;
-                if (len > 0) {
-                    src.forEach(function (item, index) {
-                        recurse(item, prop ? prop + '.[' + index + ']' : index);
-                    })
-                } else {
-                    result[prop] = [];
-                }
-            } else {
-                result[prop] = src;
-            }
-        }
-        recurse(obj,'');
-
-        return result;
-    };
-
-    console.log(Object.flatten(input));
+//    const input = {
+//        a:1,
+//        b:[1,2,{c:true},[3]],
+//        d:{e:2,f:3},
+//        g:null
+//    };
+//
+//
+//
+//    Object.flatten = function(obj){
+//        var result = {};
+//
+//        function recurse(src, prop) {
+//            var toString = Object.prototype.toString;
+//            if (toString.call(src) == '[object Object]') {
+//                var isEmpty = true;
+//                for (var p in src) {
+//                    isEmpty = false;
+//                    recurse(src[p], prop ? prop + '.' + p : p)
+//                }
+//                if (isEmpty && prop) {
+//                    result[prop] = {};
+//                }
+//            } else if (toString.call(src) == '[object Array]') {
+//                var len = src.length;
+//                if (len > 0) {
+//                    src.forEach(function (item, index) {
+//                        recurse(item, prop ? prop + '.[' + index + ']' : index);
+//                    })
+//                } else {
+//                    result[prop] = [];
+//                }
+//            } else {
+//                result[prop] = src;
+//            }
+//        }
+//        recurse(obj,'');
+//
+//        return result;
+//    };
+//
+//    console.log(Object.flatten(input));
 </script>
 </body>
 </html>
