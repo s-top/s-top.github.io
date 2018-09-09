@@ -28,7 +28,7 @@ uappend(布尔值)  | 如果此次导航的目的path为相对路径，则实际
 activeClass(字符串)  | 默认值为v-link-active，指带有v-link指令的a元素处于激活状态时的class名称
 --------- | ---------
 
-![image]({{ site.baseurl }}/assets/img/blog/2018-09-07-RouterViem/1.png)
+![image]({{ site.baseurl }}/assets/img/blog/2018-09-07-RouterView/1.png)
 
 #### router-view
 
@@ -52,7 +52,7 @@ router-view是一个Vue组件，它具有以下特性：
 --------- | ---------
 hashbang(布尔值)  | 默认值为true。表示匹配的路由在浏览器地址栏中以hash模式显示(当前浏览器地址：.com/path?query。点击home链接时，地址会显示为：.com/path?query#!/home)
 --------- | ---------
-history(布尔值)  | 默认值为false。当为true时，会以HTML5 history API进行导航 ![image]({{ site.baseurl }}/assets/img/blog/2018-09-07-RouterViem/2.png)
+history(布尔值)  | 默认值为false。当为true时，会以HTML5 history API进行导航 ![image]({{ site.baseurl }}/assets/img/blog/2018-09-07-RouterView/2.png)
 --------- | ---------
 saveScrollPosition(布尔值)  | 该值为true时，在点击浏览器后退按钮时页面会定位到上一次该路由对应视图所在的位置
 --------- | ---------
@@ -65,12 +65,16 @@ linkActiveClass(字符串)  | 默认值为v-link-active，表示v-link所在元�
 root(字符串)  | 默认值为null，该值只在history值为true时生效。定义路由根路径，所有路径被匹配时，浏览器地址栏URL会显示为根路径 + 匹配路径
 --------- | ---------
 
+<br>
+
 (二)路由实例属性  | router实例暴露了两个属性
 --------- | ---------
 app(根组件实例)  | vue-router应用的根vue实例，由调用router.start(App,'#app')时传入的组件构造器App创建得到
 --------- | ---------
 mode(字符串)  | 可能值有html5/hash/abstract
 --------- | ---------
+
+<br>
 
 (三)路由器实例方法  | router实例暴露了很多方法，用来提供启动、路由映射、重定向、路由切换全局钩子等功能
 --------- | ---------
@@ -86,13 +90,68 @@ replace(path)  | 不会创建新的历史记录
 --------- | ---------
 redirect(redirectMap)  | 定义全局重定向规则。参数格式为\{fromPath: toPath\}，即当前访问的路径到实际路径的映射关系
 --------- | ---------
-Alias(aliasMap)  | 配置别名规则。和重定向不同，重定向的地址栏显示的是toPath，实际匹配地址也是toPath;而别名实际地址栏显示的是fromPath，而路由实际匹配的是toPath。
+Alias(aliasMap)  | 配置别名规则。和重定向不同，重定向的地址栏显示的是toPath，实际匹配地址也是toPath;而别名实际地址栏显示的是fromPath，而路由实际匹配的是toPath
 --------- | ---------
-BeforeEach(hookFunction)  | 该方法用来全局注册前置钩子。它会在整个路由切换的最前端被调用，优先于各路由组件中的路由钩子执行，因此这里可以做一些全局的访问控制。当钩子被reject时，整个路由切换将取消
+BeforeEach(hookFunction)  | 该方法用来全局注册前置钩子。它会在整个路由切换的最前端被调用，优先于各路由组件中的路由钩子执行，因此这里可以做一些全局的访问控制。当钩子被reject时，整个路由切换将取消。后一个钩子只有在前一个被resolve之后才会调用
+--------- | ---------
+router.afterEach(hookFunction)  | 该方法用来全局注册后置钩子函数，该钩子会在每次canDeactivate和canActivate猴子被resolve之后执行，并不能保证所有的activate钩子被resolve
 --------- | ---------
 
+<br>
 
+#### 组件路由配置
 
+在vue-router应用中，每一个路由对应一个组件，在路由组件中我们可以配置route字段来实现在路由切换的各个阶段对组件进行更好的控制。
+
+(1)路由切换的各个阶段
+
+vue-router将路由切换分为三个阶段。
+
+在路由切换的各个阶段，vue-router都提供了相应的钩子函数。
+
+canReuse,canActivate,activate,data,canDeavtivate,deactivate。
+
+钩子函数介绍  | 说明
+--------- | ---------
+canReuse  |
+--------- | ---------
+canActivate  |
+--------- | ---------
+activate  |
+--------- | ---------
+data  |
+--------- | ---------
+canDeavtivate  |
+--------- | ---------
+deactivate  |
+--------- | ---------1
+
+举例：假定当前匹配的路径为a/b/c，当接下来要访问的路径是a/d/e时，我们需要从a/b/c路径对应的组件树切换到a/d/e对于的组件树。
+
+![image]({{ site.baseurl }}/assets/img/blog/2018-09-07-RouterView/3.png)
+
+> 在以上路由切换过程中，我们需要做以下工作：
+
+可以重用组件A，因为重新渲染后，组件A依然保持不变。
+
+需要停用并移除组件B和C。
+
+启用并激活组件D和E。
+
+在执行2和3之前，需要确保切换效果有效，也就是确保切换中涉及的所有组件都能按照所期望的那样被停用/激活。
+
+<br>
+
+步骤阶段  | 图解不同阶段  | 说明
+--------- | ---------
+可重用阶段  |   | 检测可重用性（通过canReuse选项）来判断的。默认情况下，所有组件都是可重用的
+--------- | ---------
+验证阶段  | ![image]({{ site.baseurl }}/assets/img/blog/2018-09-07-RouterView/4.png)  | 检测当前组件是否能够停用，以及新组件是否可以被激活（通过canDeactivate和canActivate钩子函数来判断）
+--------- | ---------
+激活阶段  | ![image]({{ site.baseurl }}/assets/img/blog/2018-09-07-RouterView/5.png)  | 一旦所有的验证钩子函数都被调用而且没有终止切换，切换就可以认定是合法的，路由器则开始禁用当前组件并启用新组件
+--------- | ---------
+
+<br>
 
 
 

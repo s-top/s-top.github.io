@@ -1,84 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8">
-    <title>radio button validation example</title>
-    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>上下移动</title>
+    <style>
+        #a{
+            position: relative;
+            z-index: 1;
+        }
+    </style>
 </head>
 <body>
+<!--<div id="a" style="background: blue">上下移动</div>-->
+<!--<div id="b"><img src="" alt="" style="background: red"/>2222222222222222222</div>-->
+    <p>hello<q>html</q></p>
 <script>
-    const NotFound = { template: '<p>Page not found</p>' }
-    const Home = { template: '<p>home page</p>' }
-    const About = { template: '<p>about page</p>' }
 
-    const routes = {
-        '/': Home,
-        '/about': About
+    var a= "qpzm";
+    var b= "qp" + "zm";
+    if(a == b){
+        console.log("a == b");
+    }else{
+        console.log("a != b");
+    }
+    if(a.isEqual(b)){
+        console.log("a == b");
+    }else{
+        console.log("a != b");
     }
 
-    new Vue({
-        el: '#app',
-        data: {
-            currentRoute: window.location.pathname
-        },
-        computed: {
-            ViewComponent(){
-            return routes[this.currentRoute] || NotFound
-            }
-        },
-        render (h) { return h(this.ViewComponent) }
-    })
-//    var template = require('url-template');
-//    var email = template.parse('/{email}/{folder}/{id}');
-//    //杩斿洖 '/user@domain/test/42'
-//    emailUrl.expand({
-//        email: 'user@domain',
-//        folder: 'test',
-//        id: 42
-//    });
 
-//    const input = {
-//        a:1,
-//        b:[1,2,{c:true},[3]],
-//        d:{e:2,f:3},
-//        g:null
-//    };
-//
-//
-//
-//    Object.flatten = function(obj){
-//        var result = {};
-//
-//        function recurse(src, prop) {
-//            var toString = Object.prototype.toString;
-//            if (toString.call(src) == '[object Object]') {
-//                var isEmpty = true;
-//                for (var p in src) {
-//                    isEmpty = false;
-//                    recurse(src[p], prop ? prop + '.' + p : p)
-//                }
-//                if (isEmpty && prop) {
-//                    result[prop] = {};
-//                }
-//            } else if (toString.call(src) == '[object Array]') {
-//                var len = src.length;
-//                if (len > 0) {
-//                    src.forEach(function (item, index) {
-//                        recurse(item, prop ? prop + '.[' + index + ']' : index);
-//                    })
-//                } else {
-//                    result[prop] = [];
-//                }
-//            } else {
-//                result[prop] = src;
-//            }
-//        }
-//        recurse(obj,'');
-//
-//        return result;
-//    };
-//
-//    console.log(Object.flatten(input));
 </script>
 </body>
 </html>
