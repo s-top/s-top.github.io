@@ -15,6 +15,8 @@ Vue.js本身并没有提供路由机制，但是官方以插件(vue-router)的�
 
 视图部分用来给用户提供导航以及导航结果展示区域。
 
+<br>
+
 v-link  | 说明
 --------- | ---------
 params(对象)  | 包含路由中的动态片段和全匹配片段的键值对
@@ -47,6 +49,8 @@ router-view是一个Vue组件，它具有以下特性：
 #### 路由实例
 
 实例化VueRouter时可以传入一个可选的vueRouterConfig路由选项对象来自定义路由器的行为。
+
+<br>
 
 (一)路由选项  | 创建路由器实例时，可以传入路由选项来自定义路由器行为
 --------- | ---------
@@ -103,6 +107,8 @@ router.afterEach(hookFunction)  | 该方法用来全局注册后置钩子函数�
 
 在vue-router应用中，每一个路由对应一个组件，在路由组件中我们可以配置route字段来实现在路由切换的各个阶段对组件进行更好的控制。
 
+<br>
+
 (1)路由切换的各个阶段
 
 vue-router将路由切换分为三个阶段。
@@ -113,18 +119,32 @@ canReuse,canActivate,activate,data,canDeavtivate,deactivate。
 
 钩子函数介绍  | 说明
 --------- | ---------
-canReuse  |
+canReuse  | 该钩子函数用来判断组件是否可以重用。若可以重用，则不会创建新的组件实例，只会调用data钩子函数来更新数据(transition.to和transition.from)
 --------- | ---------
-canActivate  |
+canActivate  | 在验证阶段，当一个组件将要被切入时被调用(transition.abort()可以取消此次切换)
 --------- | ---------
-activate  |
+activate  | 在激活阶段，当组件被创建而且将要切换进入时被调用(transition.next(),此时再调用transition.abort()不可以取消此次切换)
 --------- | ---------
-data  |
+data  | 在激活阶段，activate钩子函数被resolve时调用，用于加载和设置当前组件的数据(transition.next(data)会为组件的data相应属性赋值，原理就是调用component.$set())。切换进来的组件会得到一个名为$loadingRouteData的元属性，初始值为true。
 --------- | ---------
-canDeavtivate  |
+canDeavtivate  | 在验证阶段，当一个组件将要被切出时被调用，用来验证该组件是否可以被卸载(transition.next(),此时再调用transition.abort()可以取消此次切换)
 --------- | ---------
-deactivate  |
---------- | ---------1
+deactivate  | 在激活阶段，当一个组件将要被禁用和移除时被调用
+--------- | ---------
+
+<br>
+
+data和activate钩子函数的不同之处在于：
+
+data在每次路由变动时都会被调用，即使当前组件可以被重用，但是activate仅在组件是新创建时才会被调用。
+
+假设有一个组件对应于路由/message/:id，当前用户所处的路径是/message/1。当用户浏览/message/2使，当前组件可以被重用，所以activate不会被调用。但是我们需要根据新的id参数去获取和更新数据，所以在大部分情况下，在data中获取数据比在activate中更加合理。
+
+activate的作用是控制切换到新组件的时机(数据的获取和新组件的切入动画是并行进行的)。
+
+从用户体验的角度来看一下两者的区别：
+
+如果等到获取数据之后再显示新组件。。。相反，应立刻响应用户的操作，切换视图，展示新组件的“加载”状态(waitForData:true)。
 
 举例：假定当前匹配的路径为a/b/c，当接下来要访问的路径是a/d/e时，我们需要从a/b/c路径对应的组件树切换到a/d/e对于的组件树。
 
