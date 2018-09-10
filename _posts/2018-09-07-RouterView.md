@@ -166,7 +166,7 @@ activate的作用是控制切换到新组件的时机(数据的获取和新组�
 --------- | ---------
 可重用阶段  |   | 检测可重用性（通过canReuse选项）来判断的。默认情况下，所有组件都是可重用的
 --------- | ---------
-验证阶段  | ![image]({{ site.baseurl }}/assets/img/blog/2018-09-07-RouterView/6.png)  | 检测当前组件是否能够停用，以及新组件是否可以被激活（通过canDeactivate和canActivate钩子函数来判断）
+验证阶段  | ![image]({{ site.baseurl }}/assets/img/blog/2018-09-07-RouterView/4.png)  | 检测当前组件是否能够停用，以及新组件是否可以被激活（通过canDeactivate和canActivate钩子函数来判断）
 --------- | ---------
 激活阶段  | ![image]({{ site.baseurl }}/assets/img/blog/2018-09-07-RouterView/5.png)  | 一旦所有的验证钩子函数都被调用而且没有终止切换，切换就可以认定是合法的，路由器则开始禁用当前组件并启用新组件
 --------- | ---------
