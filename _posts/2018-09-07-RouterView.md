@@ -56,7 +56,7 @@ router-view是一个Vue组件，它具有以下特性：
 --------- | ---------
 hashbang(布尔值)  | 默认值为true。表示匹配的路由在浏览器地址栏中以hash模式显示(当前浏览器地址：.com/path?query。点击home链接时，地址会显示为：.com/path?query#!/home)
 --------- | ---------
-history(布尔值)  | 默认值为false。当为true时，会以HTML5 history API进行导航 ![image]({{ site.baseurl }}/assets/img/blog/2018-09-07-RouterView/2.png)
+history(布尔值)  | 默认值为false。当为true时，会以HTML5 history API进行导航 ![image]({{ site.baseurl }}/assets/img/blog/2018-09-07-RouterView/6.png)
 --------- | ---------
 saveScrollPosition(布尔值)  | 该值为true时，在点击浏览器后退按钮时页面会定位到上一次该路由对应视图所在的位置
 --------- | ---------
