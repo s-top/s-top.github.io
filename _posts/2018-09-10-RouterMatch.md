@@ -34,8 +34,6 @@ vue-router做路径匹配时支持动态片段、全匹配片段以及查询参�
 
 #### 路由对象
 
-<br>
-
 路由对象$route  | 说明
 --------- | ---------
 path  | 字符串，当前路由对象的路径
@@ -56,8 +54,6 @@ name  | 字符串，当前路径的名字
 #### transition对象
 
 transition对象在这里不是动画对象，它提供了很多方法来控制路由切换的时机。
-
-<br>
 
 transition对象  | 说明
 --------- | ---------
@@ -141,7 +137,9 @@ redirect  | 函数，取消当前切换并重定向到另一个路由
 
 > 目录结构
 
-![image]({{ site.baseurl }}/assets/img/blog/2018-09-10-RouterMatch/1.png) | ![image]({{ site.baseurl }}/assets/img/blog/2018-09-10-RouterMatch/2.png)
+![image]({{ site.baseurl }}/assets/img/blog/2018-09-10-RouterMatch/1.png)
+
+![image]({{ site.baseurl }}/assets/img/blog/2018-09-10-RouterMatch/2.png)
 
 
 
