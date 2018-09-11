@@ -74,31 +74,7 @@ redirect  | 函数，取消当前切换并重定向到另一个路由
 
 <router-view>是一个顶级的外链，它会渲染一个和顶级路由匹配的组件。
 
-```javascript
-    <div id="app">
-        <router-view></router-view>
-    </div>
-    route.map({
-        '/foo': {
-            component: Foo,
-            subRouters:{
-                '/':{
-                    component: Default
-                },
-                '/bar':{
-                    component: Bar
-                }
-                ....
-            }
-        }
-    })
-    //以上路由映射等价于通过此种方式调用，实际上调用router.mao时在vue-router内部会对每个键值对调用router.on方法来完成路由规则映射
-    var Foo = Vue.extend({
-        template:
-            '<div class="foo">' + .....
-            '<router-view></router-view>'  //嵌套的外链
-    })
-```
+
 
 #### 动态加载路由组件
 
