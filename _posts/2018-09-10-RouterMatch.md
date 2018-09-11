@@ -78,7 +78,6 @@ redirect  | 函数，取消当前切换并重定向到另一个路由
     <div id="app">
         <router-view></router-view>
     </div>
-
     route.map({
         '/foo': {
             component: Foo,
@@ -94,7 +93,6 @@ redirect  | 函数，取消当前切换并重定向到另一个路由
         }
     })
     //以上路由映射等价于通过此种方式调用，实际上调用router.mao时在vue-router内部会对每个键值对调用router.on方法来完成路由规则映射
-
     var Foo = Vue.extend({
         template:
             '<div class="foo">' + .....
