@@ -98,7 +98,7 @@ redirect  | 函数，取消当前切换并重定向到另一个路由
     var Foo = Vue.extend({
         template:
             '<div class="foo">' + .....
-            '<router-view></router-view>'  // <-嵌套的外链
+            '<router-view></router-view>'  //嵌套的外链
     })
 ```
 
