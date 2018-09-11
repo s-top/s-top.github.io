@@ -15,18 +15,23 @@
 <!--<div id="b"><img src="" alt="" style="background: red"/>2222222222222222222</div>-->
     <p>hello<q>html</q></p>
 
-    <router-view></router-view>
+    <!--<router-view></router-view>-->
 
 <script>
 
+    var a = {
+        p:"1234567",
+        getP: function () {
+            return this.p;
+        }
+    };
+    var m = a.getP;
 
-    setTimeout(function () {
-        console.log(1);
-    }, 100)
-    setTimeout(function () {
-        console.log(2);
-    }, 0)
-    console.log(3)
+
+    console.log(a.getP());
+    console.log(m());
+
+
 </script>
 </body>
 </html>

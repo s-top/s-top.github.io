@@ -135,11 +135,12 @@ redirect  | 函数，取消当前切换并重定向到另一个路由
 
 > 目录结构
 
-![image]({{ site.baseurl }}/assets/img/blog/2018-09-10-RouterMatch/1.png)
+![image]({{ site.baseurl }}/assets/img/blog/2018-09-10-RouterMatch/1.png) | ![image]({{ site.baseurl }}/assets/img/blog/2018-09-10-RouterMatch/2.png)
 
-![image]({{ site.baseurl }}/assets/img/blog/2018-09-10-RouterMatch/2.png)
+```javascript
+    ========
 
-
+```
 
 
 
