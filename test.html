@@ -11,14 +11,22 @@
     </style>
 </head>
 <body>
-<!--<div id="a" style="background: blue">иообрф╤╞</div>-->
-<!--<div id="b"><img src="" alt="" style="background: red"/>2222222222222222222</div>-->
-<!--<p>hello<q>html</q></p>-->
+<ul>
 
-    <!--<router-view></router-view>-->
-
-<div id="app"></div>
-<script src="build.js"></script>
+</ul>
+<script>
+    function f() {
+        var i = 0;
+        return function () {
+            console.log(i++);
+        }
+    }
+    var f1 = f();
+    var f2 = f();
+    f1();
+    f1();
+    f2();
+</script>
 
 </body>
 </html>
