@@ -139,9 +139,52 @@ redirect  | 函数，取消当前切换并重定向到另一个路由
 
 ```javascript
     ========
-
+    <div id="app"></div>
+    <script src="build.js"></script>
+    ========
+    var Vue = require('vue');
+    var VueRouter = require('vue-router');
+    var configRoute = require('./router-config');
+    //router-config用来配置路由映射规则、重定向、别名、全局钩子函数等，并利用Webpack的代码分割功能和vue-router的组件动态resolve的功能提供组件的动态加载
+    Vue.use(VueRouter);
+    //创建router实例
+    var router = new VueRouter({});
+    //配置路由映射规则
+    configRouter(router);
+    //启动主组件，以此来启动整个路由应用
+    var app = require("./app.vue");
+    router.start(app,"#app");
+    ========
+    //router-config.js
+    module.exports = function configRouter(router){
+        //定义路由映射规则
+        router.map({
+            '/home': {
+                component: function(resolve){
+                    require(['./home.vue'], resolve);
+                }
+            },
+        })
+    }
+    //路由别名配置
+    router.alias({
+        '/home/alias': '/home'
+    })
+    //路由重定向
+    router.redirect({
+        '/': '/home'
+    })
 ```
 
+> 注意：
+
+```javascript
+    require(['./asyncModule'], function(module){
+      module.doSomething()
+    })
+    //Webpack在编译时遇到以上AMD语法，并不会直接加载asyncModule源码，而是在浏览器中执行到此处时，才会去服务端动态加载，加载完后会执行回调方法，回调接受的参数是请求的module
+
+```
 
 
 
