@@ -81,8 +81,48 @@ implements-interface-let-package-private-protected-public-static-yield
 
 "use strict" 指令只允许出现在脚本或函数的开头
 
+### 函数去抖(debounce)和函数节流(throttle)
 
+函数节流是指一定时间内js方法只跑一次。比如人的眨眼睛，就是一定时间内眨一次。这是函数节流最形象的解释。
 
+函数防抖是指频繁触发的情况下，只有足够的空闲时间，才执行代码一次。比如生活中的坐公交，就是一定时间内，如果有人陆续刷卡上车，司机就不会开车。只有别人没刷卡了，司机才开车。
+
+```javascript
+    // 函数节流
+    // 函数节流的要点是，声明一个变量当标志位，记录当前代码是否在执行
+    // 如果空闲，则可以正常触发方法执行
+    // 如果代码正在执行，则取消这次方法执行，直接return
+    var canRun = true;
+    document.getElementById("throttle").onscroll = function(){
+        if(!canRun){
+            // 判断是否已空闲，如果在执行中，则直接return
+            return;
+        }
+        canRun = false;
+        setTimeout(function(){
+            console.log("函数节流");
+            canRun = true;
+        }, 300);
+    };
+    //================================================
+    // 函数防抖
+    // 函数防抖的要点，也是需要一个setTimeout来辅助实现。延迟执行需要跑的代码。
+    // 如果方法多次触发，则把上次记录的延迟执行代码用clearTimeout清掉，重新开始。
+    // 如果计时完毕，没有方法进来访问触发，则执行代码。
+    var timer = false;
+    document.getElementById("debounce").onscroll = function(){
+        clearTimeout(timer); // 清除未执行的代码，重置回初始化状态
+        timer = setTimeout(function(){
+            console.log("函数防抖");
+        }, 300);
+    };
+```
+
+> 区别如下：
+
+![image]({{ site.baseurl }}/assets/img/blog/2018-09-02-JavaScript/1.png)
+
+![image]({{ site.baseurl }}/assets/img/blog/2018-09-02-JavaScript/2.png)
 
 
 
