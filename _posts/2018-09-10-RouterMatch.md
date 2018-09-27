@@ -138,13 +138,13 @@ redirect  | 函数，取消当前切换并重定向到另一个路由
 ![image]({{ site.baseurl }}/assets/img/blog/2018-09-10-RouterMatch/1.png) | ![image]({{ site.baseurl }}/assets/img/blog/2018-09-10-RouterMatch/2.png)
 
 ```javascript
-    ========
+    ========index.html
     <div id="app"></div>
     <script src="build.js"></script>
-    ========
+    ========index.js
     var Vue = require('vue');
     var VueRouter = require('vue-router');
-    var configRoute = require('./router-config');
+    var configRouter = require('./router-config');
     //router-config用来配置路由映射规则、重定向、别名、全局钩子函数等，并利用Webpack的代码分割功能和vue-router的组件动态resolve的功能提供组件的动态加载
     Vue.use(VueRouter);
     //创建router实例
@@ -154,8 +154,7 @@ redirect  | 函数，取消当前切换并重定向到另一个路由
     //启动主组件，以此来启动整个路由应用
     var app = require("./app.vue");
     router.start(app,"#app");
-    ========
-    //router-config.js
+    ========router-config.js
     module.exports = function configRouter(router){
         //定义路由映射规则
         router.map({
@@ -164,6 +163,11 @@ redirect  | 函数，取消当前切换并重定向到另一个路由
                     require(['./home.vue'], resolve);
                 }
             },
+            '*': {
+                component: function(resolve){
+                    require(['./not-found.vue'], resolve);
+                }
+            }
         })
     }
     //路由别名配置
@@ -174,6 +178,74 @@ redirect  | 函数，取消当前切换并重定向到另一个路由
     router.redirect({
         '/': '/home'
     })
+    //全局前置钩子函数，在路由开始切换前执行，优先于路由组件钩子函数
+    router.beforeEach(function(transition){
+        //transition.to 表示将要跳转到的路由对象
+        //transition.from 表示当前路由对象
+        if(transition.to.path === "/forbidden"){
+            router.app.authenticating = true;
+            setTimeout(()=>{
+                router.app.authenticating = false;
+                //终止路由切换，应用保持
+                transition.abort()
+            }, 3000)
+        }else{
+            transition.next()
+        }
+    })
+    ========app.vue定义了根组件，该组件定义了v-link导航部分以及根视图router-view
+    <div>
+        <a v-link = "{path: '/home'}">Home</a>
+        <a v-link = "{path: '/not-found'}">Not-found</a>
+    </div>
+    //home.vue组件匹配path值为/home
+    //在组件的配置对象中，除了常规Vue.js组件的属性外，还可以传入路由配置对象route属性，用来控制路由切换过程中的各个阶段
+    //route是一个对象，它可以接受5个钩子函数属性分别用来控制切换时的5个阶段
+    ========home.vue
+    <style>
+        module.exports = {
+            //路由配置对象
+            route: {
+                //判断组件是否可重用
+                //只有当前组件和要切换到的组件的根路径相同时，才会调用该钩子函数
+                canResuse: function(){
+                    return true;
+                },
+                //从其他路由切换到该组件时，会调用此钩子函数判断
+                //可否切换到该组件，当该组件返回true或者被resolve时
+                //才会认为可切换到此组件，否则将会取消路由切换，同时
+                //停止执行之后的钩子函数
+                canActivate: function(){
+                    return true;
+                },
+                //被resolve后视图开始切换的同时被调用
+                //注意，当组件可重用时，不会触发该钩子函数
+                activate: function(){
+                    var self = this;
+                    this.timer = setTimeout(function(){
+                        self.counter += 1;
+                    }, 3000)
+                },
+                //activate被resolve后，调用该函数获取数据
+                data: function(){
+                    return {
+                        counter: 0
+                    };
+                },
+                //canDeactivate被resolve后调用该函数，可以在
+                //函数中进行一些组件移除前的清理工作，如移除定时器等
+                deactivate: function(){
+                    clearTimeout(this.timer);
+                }
+            },
+            data: function(){
+                return{
+                    title: "home",
+                    counter: 0
+                }
+            }
+        }
+    </style>
 ```
 
 > 注意：
@@ -186,8 +258,19 @@ redirect  | 函数，取消当前切换并重定向到另一个路由
 
 ```
 
+#### 常见问题解析
 
+有时候我们希望在路由视图切换后，切换进来的视图保持在最后一次停留的位置。但是saveScrollPosition不生效（因为saveScrollPosition只在HTML5模式下生效，需要同时设置history值为true）。
 
+监听不到查询参数，从#！/books/search?cat=1到#！/books/search?cat=2。因为此时只有查询参数发生了变化，vue-router认为组件是可重用的，所以只会执行data钩子函数。
+
+判断当前路径和目的路径，有时候我们需要根据当前路径和将要跳转的路径来决定下一步的操作，这时可以在全局钩子函数beforeEach中进行判断
+
+切换路由时修改页面标题（afterEach全局钩子函数）
+
+canReuse配置无效（在可重用阶段，vue-router首先会判断两个路由有无相同的根组件，如果没有则任务不可复用，而不管canReuse的值是否为true）
+
+![image]({{ site.baseurl }}/assets/img/blog/2018-09-10-RouterMatch/3.png)
 
 
 
