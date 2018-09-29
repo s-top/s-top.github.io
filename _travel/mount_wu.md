@@ -8,9 +8,9 @@ tags: [旅行]
 
 ![image]({{ site.baseurl }}/{{ page.img }})
 
-先来一段视频，嗨起来。
+> 先来一段视频
 
-<iframe width="560" height="315" src="{{ site.baseurl }}/assets/img/travel/wudang/1.mp4" frameborder="0" allowfullscreen></iframe>
+<iframe width="80%" height="600" src="{{ site.baseurl }}/assets/img/travel/wudang/1.mp4" frameborder="0" allowfullscreen></iframe>
 
 时间：2018年4月12日，17:41分
 
@@ -100,7 +100,7 @@ tags: [旅行]
 
 ![image]({{ site.baseurl }}/assets/img/travel/wudang/22.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/23.)
+![image]({{ site.baseurl }}/assets/img/travel/wudang/23.jpg)
 
 爬了半天，天气开始放晴了。
 
