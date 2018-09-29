@@ -10,7 +10,7 @@ tags: [旅行]
 
 先来一段视频，嗨起来。
 
-<iframe width="560" height="315" src=\"{{ site.baseurl }}/assets/img/travel/wudang/1.mp4\" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{ site.baseurl }}/assets/img/travel/wudang/1.mp4" frameborder="0" allowfullscreen></iframe>
 
 时间：2018年4月12日，17:41分
 
@@ -42,21 +42,21 @@ tags: [旅行]
 
 > 刚下车就傻眼了
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/4.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/4.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/5.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/5.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/6.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/6.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/7.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/7.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/8.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/8.jpg)
 
 说实话，风大，雾大，夹着小雨，冷！
 
 > 文明行天下
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/9.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/9.jpg)
 
 计划中，想看日出，结果这种天气的话，就只能白天爬了。
 
@@ -64,25 +64,25 @@ tags: [旅行]
 
 > 空山新雨。。中
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/10.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/10.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/11.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/11.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/12.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/12.jpg)
 
 > 某电影的取景地-南岩
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/13.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/13.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/14.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/14.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/15.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/15.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/16.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/16.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/17.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/17.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/18.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/18.jpg)
 
 差不多60多分钟，从南岩一个来回。还给别人指路，结果后来才发现指错了，尴尬。
 
@@ -90,35 +90,35 @@ tags: [旅行]
 
 > 经历过绝望么
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/19.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/19.jpg)
 
 > 又上又下
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/20.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/20.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/21.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/21.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/22.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/22.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/23.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/23.)
 
 爬了半天，天气开始放晴了。
 
 > 远方的晴天
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/24.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/24.jpg)
 
 > 最高处，金殿
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/25.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/25.jpg)
 
 > 返程，雾散
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/26.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/26.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/27.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/27.jpg)
 
-![image]({{ site.baseurl }}/assets/img/travel/wudang/28.jpg
+![image]({{ site.baseurl }}/assets/img/travel/wudang/28.jpg)
 
 虽然，有些许遗憾，与爬山无关。
 
