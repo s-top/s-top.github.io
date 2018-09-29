@@ -10,7 +10,7 @@ tags: [旅行]
 
 > 先来一段视频
 
-<iframe width="80%" height="600" src="{{ site.baseurl }}/assets/img/travel/wudang/1.mp4" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="600" src="{{ site.baseurl }}/assets/img/travel/wudang/1.mp4" frameborder="0" allowfullscreen></iframe>
 
 时间：2018年4月12日，17:41分
 
