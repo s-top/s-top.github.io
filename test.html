@@ -5,140 +5,60 @@
     <title>上下移动</title>
 
     <style>
-        module.exports
-
-        =
-        {
-        /
-        /
-        路由配置对象
-        route: {
-
-        /
-        /
-        判断组件是否可重用
-
-        /
-        /
-        只有当前组件和要切换到的组件的根路径相同时，才会调用该钩子函数
-        canResuse:
-
-        function
-        (
-        )
-        {
-            return true
-        ;
-        }
-        ,
-        /
-        /
-        从其他路由切换到该组件时，会调用此钩子函数判断
-
-        /
-        /
-        可否切换到该组件，当该组件返回true或者被resolve时
-
-        /
-        /
-        才会认为可切换到此组件，否则将会取消路由切换，同时
-
-        /
-        /
-        停止执行之后的钩子函数
-        canActivate:
-
-        function
-        (
-        )
-        {
-            return true
-        ;
-        }
-        ,
-        /
-        /
-        被resolve后视图开始切换的同时被调用
-
-        /
-        /
-        注意，当组件可重用时，不会触发该钩子函数
-        activate:
-
-        function
-        (
-        )
-        {
-            var self = this
-        ;
-        this.timer
-
-        =
-        setTimeout
         (
         function
         (
         )
         {
-            self . counter+ = 1
-        ;
-        }
-        ,
-        3000
-        )
-        }
-        ,
-        /
-        /
-        activate被resolve后，调用该函数获取数据
-        data:
-
-        function
-        (
-        )
-        {
-        return {
-            counter: 0
-        }
-
-        ;
-        }
-        ,
-        /
-        /
-        canDeactivate被resolve后调用该函数，可以在
-
-        /
-        /
-        函数中进行一些组件移除前的清理工作，如移除定时器等
-        deactivate:
-
-        function
-        (
-        )
-        {
-        clearTimeout
+        with
         (
         this
-        .
-        timer
-        )
-        ;
-        }
-        }
-        ,
-        data:
 
-        function
-        (
         )
         {
-        return {
-            title: "home", counter : 0
+        return
+
+        _h
+        (
+        _e
+        (
+        'div'
+        ,
+        {
+        staticAttrs: {
+        "id" : "app"
         }
 
         }
+        )
+        ,
+        [
+
+        _h
+        (
+        _e
+        (
+        'h1'
+        )
+        ,
+        [
+
+        (
+        "hello"
+        +
+        _s
+        (
+        who
+
+        )
+        )
+        ]
+        )
+        ]
+        )
         }
+        }
+        )
     </style>
 </head>
 <body>
