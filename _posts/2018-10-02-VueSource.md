@@ -72,9 +72,82 @@ hasBindAttr(node, name)  | node元素上是否有绑定的name属性
 class操作  | 说明
 --------- | ---------
 setClass(el, cls)  | 设置class名称
-getBindAttr(node, name)  | 获取：name或v-bind:name的属性值
-hasBindAttr(node, name)  | node元素上是否有绑定的name属性
+addClass(el, cls)  | 添加className，其中classList属性返回元素的类名，作为DOMTokenList对象，该属性用于在元素中添加、移除及切换CSS类
+removeClass(el, cls)  | 删除el元素的className，如果没有className，则移除元素的class属性
 
+事件操作  | 说明
+--------- | ---------
+on(el, event, cb, useCapture)  | el绑定event事件监听（useCapture指定事件是否在捕获或冒泡阶段执行）
+off(el, event, cb)  | 移除事件监听
+
+其他  | 说明
+--------- | ---------
+createAnchor(content, persist)  | 创建一个“执行插入/删除锚点”。使用场景：片段代码、v-html、v-if、v-for、组件  | ![image]({{ site.baseurl }}/assets/img/blog/2018-10-02-VueSource/4.png)
+findRef(node)  | 在node元素中找到v-ref绑定的值  |
+mapNodeRange(node, end, op)  | 在范围兄弟节点内调用op函数  |
+removeNodeRange(start, end, vm, frag, cb)  | 依次移除范围内的兄弟元素并移入frag元素中  |
+
+3.lang
+
+![image]({{ site.baseurl }}/assets/img/blog/2018-10-02-VueSource/5.png)
+
+对象操作  | 说明
+--------- | ---------
+set(obj, key, val)  | 设置对象属性，添加新属性触发更新
+del(obj, key)  | 删除对象属性，触发更新
+hasOwn(obj, key)  | 判断是否为自有属性
+extend(to, from)  | 扩展对象属性
+isObject(obj)  | 是否为对象
+isPlainObject(obj)  | 是否为对象字面量
+def(obj, key, val)  | 将属性添加到对象，或修改现有属性的特性
+
+名称转换  | 说明
+--------- | ---------
+classify(str)  | 将-、_、//的命名转换成驼峰命名方式
+hyphenate(str)  | 将驼峰命名方式转换为-
+camelize(str)  | 将-命名方式转换为驼峰式
+
+数组操作  | 说明
+--------- | ---------
+indexOf(arr, obj)  | 返回obj在Array中的索引位置，没有则返回-1
+
+类型转换  | 说明
+--------- | ---------
+_toString(value)  | 字符串转换
+toNumber(value)  | 数字转换
+toBoolean(value)  | 布尔转换
+toArray(value)  | 数组转换
+
+方法绑定  | 说明
+--------- | ---------
+bind(fn, ctx)  | ![image]({{ site.baseurl }}/assets/img/blog/2018-10-02-VueSource/6.png)
+--------- | ---------
+其他  | 说明
+--------- | ---------
+debounce(func, wait)  | 此方法只用于input输入后，wait毫秒后调用func方法
+stripQuotes(str)  | 去除str中的前后引号
+cancellable(fn)  | 可以撤销的异步回调函数
+looseEqual(a, b)  | 判断a和b是否相等（非严格意义上的===）
+isLiteral(exp)  | 检查表达式是否为字面量
+isReserved(str)  | 检查str是否以$或_开头
+
+4.components
+
+![image]({{ site.baseurl }}/assets/img/blog/2018-10-02-VueSource/7.png)
+
+属性  | 说明
+--------- | ---------
+commonTagRE  | 是否为普通元素
+reservedTagRE  | 是否为自定义元素
+checkComponentAttr(el, options)  | 检查el是否为组件，如果是则返回组件id
+
+5.options
+
+> mergeOptions，此方法的核心是strats对象。
+
+![image]({{ site.baseurl }}/assets/img/blog/2018-10-02-VueSource/8.png)
+
+这部分待细分。。。
 
 
 
