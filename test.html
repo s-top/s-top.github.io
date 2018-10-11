@@ -3,68 +3,29 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
     <title>上下移动</title>
-
     <style>
-        (
-        function
-        (
-        )
-        {
-        with
-        (
-        this
 
-        )
-        {
-        return
-
-        _h
-        (
-        _e
-        (
-        'div'
-        ,
-        {
-        staticAttrs: {
-        "id" : "app"
-        }
-
-        }
-        )
-        ,
-        [
-
-        _h
-        (
-        _e
-        (
-        'h1'
-        )
-        ,
-        [
-
-        (
-        "hello"
-        +
-        _s
-        (
-        who
-
-        )
-        )
-        ]
-        )
-        ]
-        )
-        }
-        }
-        )
     </style>
 </head>
 <body>
-<div>ddd</div>
+<div id="main">
+    <h1>count:{{times}}}</h1>
+</div>
 <script>
-
+    var vm = new Vue({
+        el: "#main",
+        data: function () {
+            return {
+                times: 1
+            };
+        },
+        created: function () {
+            var me = this;
+            setInterval(function () {
+                me.times++;
+            }, 1000);
+        }
+    })
 </script>
 
 </body>
