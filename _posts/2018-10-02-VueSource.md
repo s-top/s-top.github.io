@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 读书笔记—Vue.js权威指南（十一）
+title: 读书笔记—Vue.js权威指南（十二）
 tags: [前端技术]
 ---
 #### 遇见Vue.js
