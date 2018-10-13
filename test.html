@@ -4,28 +4,29 @@
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
     <title>上下移动</title>
     <style>
-
+        .red {
+            color: #f00;
+        }
     </style>
 </head>
 <body>
 <div id="main">
     <h1>count:{{times}}}</h1>
 </div>
+
+<template>
+    <h1 class="red">{{mgs}}}</h1>
+</template>
+
 <script>
-    var vm = new Vue({
-        el: "#main",
-        data: function () {
+    export default {
+        data()
+    {
             return {
-                times: 1
-            };
-        },
-        created: function () {
-            var me = this;
-            setInterval(function () {
-                me.times++;
-            }, 1000);
+                msg: 'hello,world!'
+            }
         }
-    })
+    }
 </script>
 
 </body>
