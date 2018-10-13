@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 读书笔记—Vue.js权威指南（十五）
+title: 读书笔记—Vue.js权威指南（十六）
 tags: [前端技术]
 ---
 #### 遇见Vue.js
@@ -126,15 +126,123 @@ npm install babel-core babel-preset-es2015 babel-runtime babel-plugin-transform-
 
 browserify -t vueify -e src/main.js -o build/build.js
 
-2.envify
+2.envify，转换模块用来替换代码中的有关node环境变量代码片段。这样我们就可以只在开发环境中输出调试信息，在生成环境中由于条件判断为false，调试信息不会输出。还可以结合uglifyify库在生产环境中将调试信息直接移除。
 
+npm install envify browserify
 
+```javascript
+    //index.js
+    if(process.env.NODE_ENV === "development"){
+        console.log("developmet only");
+    }
+    //假设当前NODE_ENV环境变量值为production，运行转换模块后将会得到：
+    //bundle.js
+    if("production" === "development"){
+        console.log("developmet only");
+    }
+```
 
+> 编译
 
+通过Browserify命令行使用envify转换模块：
 
+browserify index.js -t envify > bundle.js
 
+还可以在编译时传入自定义环境变量：
 
+browserify index.js -t [ envify --NODE_ENV development ] > bundle.js
 
+browserify index.js -t [ envify --NODE_ENV production ] > bundle.js
+
+### 二十五、vue-loader
+
+vue-loader是基于webpack的loader，在Vue组件化中起着决定性作用。
+
+#### 如何配置
+
+vue-loader的配置和webpack其他loader的配置类似，对.vue后缀增加处理。
+
+> 配置如下：
+
+```javascript
+    module.exports = {
+        entry: {
+            app: './src/main.js'
+        },
+        module: {
+            loaders: [
+                {
+                    test: /\.vue$/,
+                    loader: 'vue'
+                }
+            ]
+        }
+    }
+```
+
+#### 包含内容
+
+.vue文件的组成，一般包含：template标签、script标签、style标签
+
+#### 特性介绍
+
+> template标签
+
+支持lang配置多种模板语法
+
+只支持单个template标签
+
+> script标签
+
+默认支持Babel(使用label-loader)来编译ES 6语法糖
+
+对于7.0及以上版本，使用Babel6;如果使用Babel5,则需要使用6.x版本
+
+支持通过import方式载入其他.vue后缀的组件文件
+
+只支持单个script标签
+
+> style标签
+
+支持lang配置多种预编译语法
+
+支持scope属性，这样CSS只应用到当前组件的元素中
+
+一个.vue文件中可以包含多个style标签
+
+内置PostCSS和autoprefixer来自动添加浏览器前缀
+
+> Hot Reload
+
+.vue文件修改后，默认支持对应的页面自动刷新。
+
+默认内置loader的配置如下：
+
+```javascript
+    var defaultLoaders = {
+        html: 'vue-html-loader',
+        css: 'vue-style-loader!css-loader',
+        js: 'babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false'
+    }
+    //我们可以看到：
+    //JS默认使用babel-loader编译，加了一些参数
+    //HTML默认使用vue-html-loader
+    //CSS默认使用vue-style-loader和css-loader
+```
+
+#### 常见问题解析
+
+1.如何自定义autoprefixer
+
+```javascript
+    //webpack.config.js
+    module.exports = {
+        //...
+        vue: {
+            autoprefixer: false
+        }
+    }
+```
 
 
 
