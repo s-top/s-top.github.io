@@ -244,6 +244,149 @@ vue-loader的配置和webpack其他loader的配置类似，对.vue后缀增加�
     }
 ```
 
+2.如何自定义PostCSS
+
+```javascript
+    //webpack.config.js
+    module.exports = {
+        //...
+        vue: {
+            postcss: {
+            //...
+            }
+        }
+    }
+```
+
+3.如何自定义style的预编译语言
+
+```javascript
+    //第一步使用lang配置
+    <style lang = "sass"></style>
+    //第二步安装依赖
+    npm install sass-loader node-sass
+```
+
+4.如何自定义loaders
+
+```javascript
+    module.exports = {
+        module: {
+            loaders: [
+                {
+                    test: /\.vue$/,
+                    loader: 'vue'
+                }
+            ]
+        },
+        vue: {
+            loaders: {}
+        }
+    }
+```
+
+#### vue-loader文件结构
+
+![image]({{ site.baseurl }}/assets/img/blog/2018-10-13-Browserify/1.png)
+
+> 主入口文件loader.js
+
+接受.vue文件的全部内容，然后把内容content、文件名fileName传递下去。
+
+> 内容解析文件parser.js
+
+首先通过调用hash函数把文件名和文件内容生成唯一的key，然后通过cache检测，如果命中cache，就直接返回；如果没有命中，则调用parse5的parseFragment方法对文件内容进行解析，遍历子节点内容(只处理template、style和script节点)，取出对应的特性属性(lang、src和scoped)，针对空节点的script和style也进行了优化。
+
+> parser.js解析过程
+
+![image]({{ site.baseurl }}/assets/img/blog/2018-10-13-Browserify/2.png)
+
+#### 工具包介绍
+
+![image]({{ site.baseurl }}/assets/img/blog/2018-10-13-Browserify/3.png)
+
+![image]({{ site.baseurl }}/assets/img/blog/2018-10-13-Browserify/4.png)
+
+### 二十六、PostCSS
+
+PostCSS是一个用JavaScript插件来转换CSS的工具，插件可以lintCSS，支持变量，mixins、内联的图片等。
+
+PostCSS可以将CSS转换为JavaScript能够处理的数据格式，基于JavaScript所写的插件可以完成上述各种操作。
+
+PostCSS为这些插件提供了接口，方便其完成各自的功能，但是不会对CSS代码做任何修改。
+
+PostCSS的插件可以对CSS进行任何操作，只要我们有需求，就可以写一个JavaScript插件来实现。
+
+#### 安装
+
+PostCSS针对不同的构建工具提供了不同的安装工具。
+
+webpack中：npm install -g postcss-loader
+
+也可以：npm install autoprefixer
+
+#### 配置
+
+PostCSS一般与Gulp、webpack等构建工具搭配使用。在vue-loader中使用PostCSS时，需要在webpack.config.js中进行配置。当需要使用PostCSS的插件时，在vue选项中想postcss设置选项传入一个数组。
+
+```JavaScript
+    //比如使用CSSNext插件的配置代码示例如下：
+    //webpack.config.js
+    module.exports = {
+        //other configs...
+        vue: {
+            //use custom postcss plugins
+            postcss: [require('postcss-cssnext')()],
+            autoprefixer: false
+        }
+    }
+    //除此之外，postcss设置选项还可以接受：
+
+    //一个可以返回插件数组的函数
+    postcss: function(){
+        return [precss, autoprefixer];
+    }
+
+    //一个对象，该对象包含将被传给PostCSS处理器的设置选项
+    postcss: {
+        plugins: [...],
+        options: {
+            parse: sugarss
+        }
+    }
+```
+
+#### 命令
+
+在命令行或者npm scripts中使用PostCSS需要额外安装postcss-cli，其安装方式如下：
+
+nom install postcss-cli
+
+> 语法如下：
+
+postcss [options] [-o output-file|-d output-directory|-r] [input-file]
+
+命令选项如下：
+
+![image]({{ site.baseurl }}/assets/img/blog/2018-10-13-Browserify/5.png)
+
+![image]({{ site.baseurl }}/assets/img/blog/2018-10-13-Browserify/6.png)
+
+![image]({{ site.baseurl }}/assets/img/blog/2018-10-13-Browserify/7.png)
+
+#### 插件
+
+![image]({{ site.baseurl }}/assets/img/blog/2018-10-13-Browserify/8.png)
+
+![image]({{ site.baseurl }}/assets/img/blog/2018-10-13-Browserify/9.png)
+
+
+
+
+
+
+
+
 
 
 
