@@ -2,7 +2,7 @@
 layout: post
 title: 秦川之巅，绝望且敬畏
 img: "assets/img/travel/taibaishan/0.jpg"
-date: 10-2-2018
+date: 2-10-2018
 tags: [旅行]
 ---
 
