@@ -56,6 +56,68 @@ tags: [旅行]
 
 (2017-11-17于西安)
 
+得了，第三次来了，2018年05月07日。
+
+成都的朋友即将毕业，来玩，凑吧凑吧，一行五人，爬华山。
+
+华山门票只能现金。
+
+> 华山，修过了
+
+![image]({{ site.baseurl }}/assets/img/travel/huashan/8.jpg)
+
+> 北峰
+
+![image]({{ site.baseurl }}/assets/img/travel/huashan/9.jpg)
+
+> 东峰日出
+
+![image]({{ site.baseurl }}/assets/img/travel/huashan/10.jpg)
+
+和16年相比，此刻的华山东峰。
+
+> 日出后东峰
+
+![image]({{ site.baseurl }}/assets/img/travel/huashan/11.jpg)
+
+![image]({{ site.baseurl }}/assets/img/travel/huashan/12.jpg)
+
+![image]({{ site.baseurl }}/assets/img/travel/huashan/13.jpg)
+
+上午的时候，我们从东峰走到南峰。
+
+> 南峰
+
+![image]({{ site.baseurl }}/assets/img/travel/huashan/14.jpg)
+
+> 风景不错，天气尚可
+
+![image]({{ site.baseurl }}/assets/img/travel/huashan/15.jpg)
+
+![image]({{ site.baseurl }}/assets/img/travel/huashan/16.jpg)
+
+![image]({{ site.baseurl }}/assets/img/travel/huashan/17.jpg)
+
+本以为是陪老友的一趟行程，结果，景色还是不错的。
+
+同行的一个妹子，到后面都崩溃了，瞌睡的。。。
+
+看了日出，无憾。
+
+(2018-10-29于西安)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
