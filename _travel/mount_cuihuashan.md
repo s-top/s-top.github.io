@@ -2,7 +2,7 @@
 layout: post
 title: 终南山下，再无守望
 img: "assets/img/travel/cuihuashan/0.jpg"
-date: 12-5-2018
+date: 5-12-2018
 tags: [旅行]
 ---
 
