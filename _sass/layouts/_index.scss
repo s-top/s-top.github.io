@@ -30,7 +30,7 @@
 .posts {
     .post-teaser {
         @extend %padding-regular;
-        width: 100%;
+        width: 80%;
         margin-bottom: 0;
         display: inline-block;
         background-size: $feature-image-size;
