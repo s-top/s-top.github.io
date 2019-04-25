@@ -30,7 +30,7 @@
 .posts {
     .post-teaser {
         @extend %padding-regular;
-        width: 80%;
+        width: 100%;
         margin-bottom: 0;
         display: inline-block;
         background-size: $feature-image-size;
@@ -81,14 +81,6 @@
     }
     .excerpt {
         margin-top: 1em;
-    }
-    .tagList {
-        background-color: red;
-        width: 20%;
-        margin-bottom: 0;
-        display: inline-block;
-        background-size: $feature-image-size;
-        border-bottom: 1px solid $border-color;
     }
 }
 
